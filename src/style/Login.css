@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.background-color{
+    background: #767876;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: absolute; 
+    top: 0px; 
+    z-index: 1;
+}
+.back-img{
+    background-image: url('../img/Login\ Background.png');
+    mix-blend-mode: lighten;
+    position: relative;
+    /* top: 0px; */
+    width: 100%;
+    z-index: 2;
+    height: 100%;
+}
