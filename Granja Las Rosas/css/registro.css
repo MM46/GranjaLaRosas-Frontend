@@ -52,7 +52,7 @@ label{
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 110%), #F3D11A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    height: 35em;
+    height: auto;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -83,18 +83,10 @@ label{
 .formInput:focus{
     outline-style: inherit;
 }
-.user-label, .password-label{
+.user-label, .password-label, .name-label, .lastname_1-label, .lastname_2-label, .salary-label, .birth_date-label, .hire_date-label {
     padding:8px 0px;
+}
 
-}
-.password-link{
-    color:black;
-    margin: 10px 0px 0px 0px;
-    font-size: auto;
-}
-.password-link:hover{
-    opacity: 0.6;
-}
 .buttons{
     display: flex;
     flex-direction: row;
@@ -116,14 +108,12 @@ label{
     cursor: pointer;
     opacity: 0.6;
 }
-.login{
+.register{
+    
     background: rgb(250, 190, 26);
 }
-.login:hover{
+/* .login:hover{
     background: rgb(230, 188, 84);
-}
-/* .register{
-    background: #FFEB85;
 } */
 /* .register:hover{
     background: rgb(236, 226, 172);

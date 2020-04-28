@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Granja Las Rosas - Registro de Usuario</title>
+    <link rel="stylesheet" href="./css/registro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+        <div class="container">
+            <div class="formStyle" id="form">
+                <div class="row">
+                    <div class="col-md-12"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-12">
+                        <label for="user" class="user-label">Usuario:</label>
+                        <input id="username" type="text" class="formInput" placeholder="Usuario" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="name" class="name-label">Nombre:</label>
+                        <input type="text" class="formInput" id="name" placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="lastname_1" class="lastname_1-label">Apellido Paterno:</label>
+                        <input type="text" class="formInput" id="lastname_1" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastname_2" class="lastname_2-label">Apellido Materno:</label>
+                        <input type="text" class="formInput" id="lastname_2" placeholder="Apellido Materno">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="birth_date" class="birth_date-label">Fecha de Nacimiento:</label>
+                        <input type="date" class="formInput" id="birth_date" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hire_date" class="hire_date-label">Fecha de Contratación:</label>
+                        <input type="date" class="formInput" id="hire_date" placeholder="Fecha de Contratación">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="salary" class="salary-label">Salario:</label>
+                        <input type="text" class="formInput" id="salary" placeholder="Salario">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="button register" id="login_button">
+                            Registrar Usuario nuevo
+                        </button>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+        </div>
+
+</body>
+<footer>
+    &copy; Granja Las Rosas
+    <script>document.write(new Date().getFullYear());</script>
+</footer>
+<script src="js/lib/jquery.js" type="text/javascript"></script>
+<script src="js/login.js" type="text/javascript" ></script>
+
+</html>

@@ -26,6 +26,8 @@ $('#login_button').on('click', function () {
     },
     error: function (error_msg) {
       alert((error_msg["responseText"]))
+      // alert("Usuario o Contraseña incorrecta. ")
+
     }
   })
 })
