@@ -12,50 +12,52 @@
 </head>
 
 <body>
-<div class="container">
-    <form>
-        <div class="row">
-            <div class="col-md-12"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label for="user" class="user-label">Usuario:</label>
-                <input type="text" class="formInput" id="user" placeholder="Usuario" />
-                <span id="user-text"></span>
+        <div class="container">
+            <div class="formStyle" id="form">
+                <div class="row">
+                    <div class="col-md-12"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="user" class="user-label">Usuario:</label>
+                        <input id="username" type="text" class="formInput" placeholder="Usuario" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="password" class="password-label">Contraseña:</label>
+                        <input type="password" class="formInput" id="pass" placeholder="Contraseña">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="password-link" href="#">¿Olvidaste la contraseña?</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="button login" id="login_button">
+                            Ingresar
+                        </button>
+                        <!-- <button id="login_button">Login</button> -->
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="button register clickable" id="registerButton">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label for="password" class="password-label">Contraseña:</label>
-                <input type="password" class="formInput" id="password" placeholder="Contraseña" />
-                <span id="password-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <a class="password-link" href="#">¿Olvidaste la contraseña?</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <button type="submit" class="button login" id="loginButton">
-                    Ingresar
-                </button>
-            </div>
-            <div class="col-md-6">
-                <button type="button" class="button register clickable" id="registerButton">
-                    Registrarse
-                </button>
-            </div>
-        </div>
-        
-        
-    </form>
-</div>
 
 </body>
 <footer>
     &copy; Granja Las Rosas
     <script>document.write(new Date().getFullYear());</script>
 </footer>
+<script src="js/lib/jquery.js" type="text/javascript"></script>
+<script src="js/login.js" type="text/javascript" ></script>
+
 </html>
