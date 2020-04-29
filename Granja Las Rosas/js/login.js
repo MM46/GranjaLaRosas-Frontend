@@ -40,3 +40,5 @@ function getLogin() {
     window.location = './signup.html';
   }
 }
+
+getLogin()
