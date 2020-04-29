@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Granja Las Rosas</title>
-    <link rel="stylesheet" href="./css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Granja Las Rosas</title>
+        <link rel="stylesheet" href="./css/login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
 
-<body>
-        <div class="container">
-            <div class="formStyle" id="form">
-                <div class="row">
-                    <div class="col-md-12"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="user" class="user-label">Usuario:</label>
-                        <input id="username" type="text" class="formInput" placeholder="Usuario" />
+    <body>
+            <div class="container">
+                <div class="formStyle" id="form">
+                    <div class="row">
+                        <div class="col-md-12"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="password" class="password-label">Contraseña:</label>
-                        <input type="password" class="formInput" id="pass" placeholder="Contraseña">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="user-label">Usuario:</label>
+                            <input id="username" type="text" class="formInput" placeholder="Usuario" />
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="password-link" href="passwordForgotten.html">¿Olvidaste la contraseña?</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="password-label">Contraseña:</label>
+                            <input type="password" class="formInput" id="pass" placeholder="Contraseña">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button type="submit" class="button login" id="login_button">
-                            Ingresar
-                        </button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a class="password-link" href="passwordForgotten.html">¿Olvidaste la contraseña?</a>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class = "button login" id="login_button">Ingresar</button>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
-                
-                
             </div>
-        </div>
 
-</body>
-<footer>
-    &copy; Granja Las Rosas
-    <script>document.write(new Date().getFullYear());</script>
-</footer>
-<script src="js/lib/jquery.js" type="text/javascript"></script>
-<script src="js/login.js" type="text/javascript" ></script>
+            <script src="js/lib/jquery.js" type="text/javascript"></script>
+            <script src="js/login.js" type="text/javascript" ></script> 
+
+    </body>
+    <footer>
+        &copy; Granja Las Rosas
+        <script>document.write(new Date().getFullYear());</script>
+    </footer>
 
 </html>

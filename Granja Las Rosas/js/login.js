@@ -4,7 +4,6 @@ $('#login_button').on('click', function () {
   let pass = $('#pass').val()
 
   json_to_send = {
-    
     "username": username,
     "pass": pass
   };
@@ -17,17 +16,27 @@ $('#login_button').on('click', function () {
       'Content-Type': 'application/json'
     },
     method: 'POST',
-    dataType: 'json',
+    dataType: 'text',
     data: json_to_send,
     success: function (data) {
       // guardar token en localstorage o cookie
-      localStorage.setItem('token', data.token)
-      window.location = './signIn.html'
+      localStorage.setItem('token', data);
+      console.log('Succes');
+      window.location = './signup.html';
+      // console.log('Succes')
     },
     error: function (error_msg) {
-      alert((error_msg["responseText"]))
+      // alert((error_msg["responseText"]))
       // alert("Usuario o Contraseña incorrecta. ")
+      console.log("ERROR!!!!");
 
     }
-  })
-})
+  });
+});
+
+function getLogin() {
+  const token = localStorage.getItem('token');
+  if (token) {
+    window.location = './signup.html';
+  }
+}
