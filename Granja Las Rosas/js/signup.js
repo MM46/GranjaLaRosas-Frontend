@@ -14,7 +14,6 @@ if (token) {
 $('#logout_button').on('click', function () {
   $.ajax({
     url: 'https://granjalasrosasback.web.app/logout',
-    // url: 'https://tuapp.herokuapp.com/todos',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -33,13 +32,13 @@ $('#logout_button').on('click', function () {
   });
 
   localStorage.removeItem('token');
-  window.location = './login.html'
+  window.location = './Login.html'
 });
 
 function getLogin() {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location = './LogIn.html';
+    window.location = './Login.html';
   }
 }
 
