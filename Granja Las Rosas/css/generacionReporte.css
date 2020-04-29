@@ -165,3 +165,33 @@ header nav ul li a.active{
     .sidenav {padding-top: 0 20px;}
     .sidenav a {font-size: 18px;}
   }
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: auto;
+    background-color :#55544F;
+    color: white;
+    text-align: center;
+ }
+
+  .divStyle {
+    /* margin: 60px auto 97px auto; */
+    /* /* padding: 30px; */
+    background: none;
+    height: 40em;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap   ; 
+    /* margin-top: 100px; */
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 100px;
+}
