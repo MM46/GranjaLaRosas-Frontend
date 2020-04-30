@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family:'Montserrat', sans-serif;
-    position:relative;
+    /* position:relative; */
 }
   
 
@@ -57,6 +57,7 @@ header .logo{
     float: left;
     font-weight: bold;
     padding-top: 0.5rem;
+    margin-top: 5px;
 }
   
 header nav {
@@ -184,14 +185,31 @@ footer{
     /* margin: 60px auto 97px auto; */
     /* /* padding: 30px; */
     background: none;
-    height: 40em;
+    height: auto;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap   ; 
-    /* margin-top: 100px; */
+    margin-top: 100px;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 100px;
+}
+
+.button{
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: none;
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+  font-size: auto;
+}
+.button:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+.login{
+  background: rgb(250, 190, 26);
 }

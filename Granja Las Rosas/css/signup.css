@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family:'Montserrat', sans-serif;
-    position:relative;
+    /* position:relative; */
 }
   
 
@@ -62,6 +62,7 @@ header .logo{
     float: left;
     font-weight: bold;
     padding-top: 0.5rem;
+    margin-top: 5px;
 }
   
 header nav {
