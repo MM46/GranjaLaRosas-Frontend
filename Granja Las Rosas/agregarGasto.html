@@ -3,11 +3,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas</title>
-    <link rel="stylesheet" href="./css/signup.css">
+    <title> Granja Las Rosas - Gasto Nuevo</title>
+    <link rel="stylesheet" href="./css/agregarGasto.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
@@ -17,22 +18,19 @@
       <nav>
         <ul>
           <li><a href="./nominas.html"> Nóminas </a></li>
-          <li><a href="./gastos.html"> Gastos </a></li>
+          <li ><a href="./gastos.html"> Gastos </a></li>
           <li><a href="#"> Sembradíos </a></li>
           <li style="background: #4480E9"><a id="logout_button"> Cerrar Sesion</a></li>
         </ul>
       </nav>
       <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
     </header>
-  <!-- <br>
-  <br>
-  <br>
-  <br> -->
+
       <section class="sidebar">
         <h3>Menu</h3>
 
         <section class="buttons">
-          <a href="./empleadosRegistrados.html"><button class="menuButton"> Empleados Registrados</button></a>
+          <a href="./empleadosRegistrados.html"><button  class="menuButton"> Empleados Registrados</button></a>
           <br>
           <a href="./registroEmpleado.html"><button class="menuButton"> Registrar Empleado</button></a>
           <br>
@@ -41,21 +39,47 @@
       </section>
 
       <section class="main">
-        <div class="divStyle">
-          <div class="row">
-              <div class="col-md-12">
-                  <button class = "buttonStyle" id="">Nóminas</button>
-                  <button class = "buttonStyle" id="">Gastos</button>
-                  <button class = "buttonStyle" id="">Sembradíos</button>
-              </div>
-          </div>
-      </div>
+        <div class="formStyle" >
+            <div class="row">
+               <div class="col-md-12">
+                   <h3 class="title-label">Gasto Nuevo</h3>
+               </div>
+           </div>
+           <div class="row">
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Fecha:</label>
+                    <input class="formInput" type="date"  id="date" placeholder="">
+                    <!-- <input class="formInput" type="text"  id="date" placeholder="Descripción del Gasto"> -->
+                </div>
+           </div>
+           <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Descripción del Gasto:</label>
+                    <input class="formInput" type="text"  id="description" placeholder="Descripción del Gasto">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="cost" class="title-label">Costo:</label>
+                    <input class="formInput" type="number"  id="cost" placeholder="0.00"> $</input>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="button agregarGastoButton"  id="agregarGasto"> Agregar Gasto </button>
+                </div>
+            </div>
+        </div>
+       </div>
       </section>
 
   
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="js/agregarGasto.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){

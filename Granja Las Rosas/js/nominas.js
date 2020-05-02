@@ -65,9 +65,9 @@ function checkingAdmin() {
 getLogin()
 checkingAdmin()
 
-function loadEmpleados() {
+function loadNominas() {
     $.ajax({
-      url: 'https://granjalasrosasback.web.app/getEmployees',
+      url: 'https://granjalasrosasback.web.app/getPayCycles',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
@@ -75,37 +75,38 @@ function loadEmpleados() {
       method: 'GET',
       dataType: 'json',
       success: function (data) {
-        console.log("usuarios");
-        var lista = document.getElementById("usuarios");
-        $.each(data, function(index, employees) {
+        console.log("nominas");
+        console.log(data);
+        var lista = document.getElementById("nominas");
+        $.each(data, function(index, nominas) {
             var row = document.createElement("div");
             row.setAttribute('class', 'row');
             var usernameCol = document.createElement("div");
             usernameCol.setAttribute('class', 'col-md-3');
             var usernameText = document.createElement("label");
             usernameText.setAttribute('class', 'user-label');
-            usernameText.innerText = employees.username;
+            usernameText.innerText = "Fecha : " + nominas.period_start;
 
-            var nameCol = document.createElement("div");
-            nameCol.setAttribute('class', 'col-md-3');
-            var nameText = document.createElement("label");
-            nameText.setAttribute('class', 'user-label');
-            nameText.innerText = employees.name;
+            // var nameCol = document.createElement("div");
+            // nameCol.setAttribute('class', 'col-md-3');
+            // var nameText = document.createElement("label");
+            // nameText.setAttribute('class', 'user-label');
+            // nameText.innerText = employees.name;
 
-            var lastnameCol = document.createElement("div");
-            lastnameCol.setAttribute('class', 'col-md-6');
-            var lastnameText = document.createElement("label");
-            lastnameText.setAttribute('class', 'user-label');
-            lastnameText.innerText = employees.lastname1 + " " + employees.lastname2;
+            // var lastnameCol = document.createElement("div");
+            // lastnameCol.setAttribute('class', 'col-md-6');
+            // var lastnameText = document.createElement("label");
+            // lastnameText.setAttribute('class', 'user-label');
+            // lastnameText.innerText = employees.lastname1 + " " + employees.lastname2;
 
             usernameCol.appendChild(usernameText);
             row.appendChild(usernameCol);
 
-            nameCol.appendChild(nameText);
-            row.appendChild(nameCol);
+            // nameCol.appendChild(nameText);
+            // row.appendChild(nameCol);
 
-            lastnameCol.appendChild(lastnameText);
-            row.appendChild(lastnameCol);
+            // lastnameCol.appendChild(lastnameText);
+            // row.appendChild(lastnameCol);
 
             lista.appendChild(row);
 
@@ -119,4 +120,4 @@ function loadEmpleados() {
   }
 
 
-  loadEmpleados()
+  loadNominas()

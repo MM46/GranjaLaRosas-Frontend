@@ -168,7 +168,7 @@ header nav ul li a.active{
   }
 
 footer{
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;

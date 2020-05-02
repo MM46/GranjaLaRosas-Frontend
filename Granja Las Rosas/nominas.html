@@ -3,11 +3,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas</title>
-    <link rel="stylesheet" href="./css/signup.css">
+    <title> Granja Las Rosas - Nóminas</title>
+    <link rel="stylesheet" href="./css/nominas.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
@@ -16,7 +17,7 @@
       <a href="./signup.html"><img class="logo" src="./img/lasRosasLogo.png" alt="Granja Las Rosas Logo"></a>
       <nav>
         <ul>
-          <li><a href="./nominas.html"> Nóminas </a></li>
+          <li style="background-color:#9DC6FE";><a href="./nominas.html"> Nóminas </a></li>
           <li><a href="./gastos.html"> Gastos </a></li>
           <li><a href="#"> Sembradíos </a></li>
           <li style="background: #4480E9"><a id="logout_button"> Cerrar Sesion</a></li>
@@ -24,10 +25,7 @@
       </nav>
       <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
     </header>
-  <!-- <br>
-  <br>
-  <br>
-  <br> -->
+
       <section class="sidebar">
         <h3>Menu</h3>
 
@@ -41,21 +39,30 @@
       </section>
 
       <section class="main">
-        <div class="divStyle">
-          <div class="row">
-              <div class="col-md-12">
-                  <button class = "buttonStyle" id="">Nóminas</button>
-                  <button class = "buttonStyle" id="">Gastos</button>
-                  <button class = "buttonStyle" id="">Sembradíos</button>
+        <div class="formStyle" id="nominas">
+            <div class="row">
+               <div class="col-md-12">
+                   <label class="user-label">Nóminas</label>
+               </div>
+           </div>
+           <!-- <div class="row">
+               <div class="col-md-3">
+                  <label class="user-label">Usuario </label>
+               </div>
+               <div class="col-md-3">
+                <label class="user-label">Nombre </label>
               </div>
-          </div>
-      </div>
+              <div class="col-md-6">
+                <label class="user-label">Apellidos </label>
+              </div>
+           </div> -->
+       </div>
       </section>
 
   
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="js/nominas.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){

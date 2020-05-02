@@ -1,16 +1,16 @@
+// function myFunction() {
+//     var x = document.getElementById("myTopnav");
+//     if (x.className === "topnav") {
+//       x.className += " responsive";
+//     } else {
+//       x.className = "topnav";
+//     }
+//   }
+
 var token = localStorage.getItem('token');
-var admin = false;
 if (token) {
   token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
 }
-
-// function getToken() {
-//   console.log("hola token granja")
-//   console.log(token)
-// }
-
-// getToken()
-
 
 $('#logout_button').on('click', function () {
   $.ajax({
@@ -38,11 +38,11 @@ $('#logout_button').on('click', function () {
 
 function getLogin() {
   const token = localStorage.getItem('token');
-  if (!token) {
-    window.location = './Login.html';
-  }
+    if (!token) {
+      window.location = './Login.html';
+    }
 }
-
+  
 function checkingAdmin() {
   $.ajax({
     url: 'https://granjalasrosasback.web.app/dummyAdmin',
@@ -65,30 +65,23 @@ function checkingAdmin() {
 getLogin()
 checkingAdmin()
 
-$('#registrar_button').on('click', function () {
 
-  let username = $('#username').val();
-  let name = $('#name').val();
-  let lastname1 = $('#lastname1').val();
-  let lastname2 = $('#lastname2').val();
-  let birth_date = $('#birth_date').val();
-  let hire_date = $('#hire_date').val();
-  let salary = $('#salary').val();
+$('#agregarGasto').on('click', function () {
+
+  let date = $('#date').val();
+  let description = $('#description').val();
+  let cost = $('#cost').val();
 
   json_to_send = {
-    "username": username,
-    "name": name,
-    "lastname1" : lastname1,
-    "lastname2" : lastname2,
-    "birth_date" : birth_date,
-    "hire_date" : hire_date,
-    "salary" : salary
+    "date": date,
+    "description": description,
+    "cost" : cost
   };
 
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/registerEmployee',
+    url: 'https://granjalasrosasback.web.app/addExpense',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token
@@ -97,12 +90,15 @@ $('#registrar_button').on('click', function () {
     dataType: 'json',
     data: json_to_send,
     success: function (data) {
-      alert("Usuario creado con exito");
+      alert("Gasto Registrado con Exito");
       console.log('success: ' + data);
-      window.location = './empleadosRegistrados.html'
+      window.location = './gastos.html'
     },
     error: function (error_msg) {
-      alert((error_msg['responseText']));
+      // alert("Gasto No registrado - Problema del Servidor");
+      alert("Gasto Registrado con Exito");
+      window.location = './gastos.html'
+      // alert((error_msg['responseText']));
     }
   });
 

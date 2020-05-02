@@ -142,4 +142,5 @@ footer{
     padding: 20px;
     width: inherit;
     margin-top: auto;
+    position: absolute;
 }
