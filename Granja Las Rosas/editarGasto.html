@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas - Gasto Nuevo</title>
-    <link rel="stylesheet" href="./css/agregarGasto.css">
+    <title> Granja Las Rosas - Editar Gasto</title>
+    <link rel="stylesheet" href="./css/editarGasto.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -42,14 +42,14 @@
         <div class="formStyle" >
             <div class="row">
                <div class="col-md-12">
-                   <h3 class="title-label">Gasto Nuevo</h3>
+                   <h3 class="title-label">Editar Gasto</h3>
                </div>
            </div>
            <div class="row">
                 <div class="col-md-6">
                     <label for="date" class="title-label">Fecha:</label>
-                    <!-- <input class="formInput" type="date"  id="date" placeholder=""> -->
-                    <input class="formInput" type="number"  id="date" placeholder="Fecha">
+                    <input class="formInput" type="date"  id="date" placeholder="">
+                    <!-- <input class="formInput" type="text"  id="date" placeholder="Descripción del Gasto"> -->
                 </div>
            </div>
            <br>
@@ -69,7 +69,7 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <button class="button agregarGastoButton"  id="agregarGasto"> Agregar Gasto </button>
+                    <button class="button editarGastoButton"  id="editarGasto"> Guardar Cambios </button>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
   
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/agregarGasto.js"></script>
+    <script type="text/javascript" src="js/editarGasto.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){
