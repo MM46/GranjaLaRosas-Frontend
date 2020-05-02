@@ -66,39 +66,57 @@ getLogin()
 checkingAdmin()
 
 
-$('#editarGasto').on('click', function () {
+$('#guardarCambiosGasto').on('click', function () {
 
   let date = $('#date').val();
   let description = $('#description').val();
   let cost = $('#cost').val();
 
+  let oldDate = $('#date').attr("prevValue");
+  let oldDescription = $('#description').attr("prevValue");
+  let oldCost = $('#cost').attr("prevValue");
+
+
+  console.log("old values");
+  console.log("date = ", oldDate);
+  console.log("description = ", oldDescription);
+  console.log("Cost = ", oldCost);
+
+  console.log("new values");
+  console.log("date = ", date);
+  console.log("description = ", description);
+  console.log("Cost = ", cost);
+
   json_to_send = {
-    "date": date,
-    "description": description,
-    "cost" : cost
+    "old": {
+      'date': oldDate,
+      'description': oldDescription,
+      'cost': oldCost
+    },
+    "new": {
+      "date": date,
+      "description": description,
+      "cost" : cost
+    }
   };
 
   json_to_send = JSON.stringify(json_to_send);
-
+  
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/addExpense',
+    url: 'https://granjalasrosasback.web.app/updateExpense',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token
     },
-    method: 'POST',
-    dataType: 'json',
+    method: 'PATCH',
+    dataType: 'text',
     data: json_to_send,
     success: function (data) {
-      alert("Gasto Registrado con Exito");
-      console.log('success: ' + data);
+      alert("Cambios guardados con Exito");
       window.location = './gastos.html'
     },
     error: function (error_msg) {
-      // alert("Gasto No registrado - Problema del Servidor");
-      alert("Gasto Registrado con Exito");
-      window.location = './gastos.html'
-      // alert((error_msg['responseText']));
+      alert("Los cambios no se han podido guardar, Intente de Nuevo.");
     }
   });
 

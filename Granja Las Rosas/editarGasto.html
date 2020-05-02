@@ -48,7 +48,7 @@
            <div class="row">
                 <div class="col-md-6">
                     <label for="date" class="title-label">Fecha:</label>
-                    <input class="formInput" type="date"  id="date" placeholder="">
+                    <input class="formInput" type="date" prevValue = "" id="date" placeholder="">
                     <!-- <input class="formInput" type="text"  id="date" placeholder="Descripción del Gasto"> -->
                 </div>
            </div>
@@ -56,20 +56,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="date" class="title-label">Descripción del Gasto:</label>
-                    <input class="formInput" type="text"  id="description" placeholder="Descripción del Gasto">
+                    <input class="formInput" type="text" prevValue = "" id="description" placeholder="Descripción del Gasto"> </input>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <label for="cost" class="title-label">Costo:</label>
-                    <input class="formInput" type="number"  id="cost" placeholder="0.00"> $</input>
+                    <input class="formInput" type="number" prevValue = "" id="cost" placeholder="0.00"> $</input>
                 </div>
             </div>
             <br>
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <button class="button editarGastoButton"  id="editarGasto"> Guardar Cambios </button>
+                    <button class="button editarGastoButton"  id="guardarCambiosGasto"> Guardar Cambios </button>
                 </div>
             </div>
         </div>
@@ -87,6 +87,28 @@
           $('.buttonStyle').toggleClass('hiding')
         })
       })
+
+      function processUser(){
+        var parameters = location.search.substring(1).split("&");
+
+        var temp = parameters[0].split("=");
+        date = unescape(temp[1]);
+
+        temp = parameters[1].split("=");
+        description = unescape(temp[1]);
+
+        temp = parameters[2].split("=");
+        cost = unescape(temp[1]);
+
+        document.getElementById("date").value = date;
+        document.getElementById("description").value = description;
+        document.getElementById("cost").value = cost;
+
+        document.getElementById("date").setAttribute("prevValue", date);
+        document.getElementById("description").setAttribute("prevValue", description);
+        document.getElementById("cost").setAttribute("prevValue", cost);
+      }
+      processUser();
     </script>
   </body>
 

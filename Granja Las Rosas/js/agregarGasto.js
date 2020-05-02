@@ -87,18 +87,15 @@ $('#agregarGasto').on('click', function () {
       'Authorization': token
     },
     method: 'POST',
-    dataType: 'json',
+    dataType: 'text',
     data: json_to_send,
     success: function (data) {
-      alert("Gasto Registrado con Exito");
+      alert("Gasto Registrado con Exito1");
       console.log('success: ' + data);
       window.location = './gastos.html'
     },
     error: function (error_msg) {
-      // alert("Gasto No registrado - Problema del Servidor");
-      alert("Gasto Registrado con Exito");
-      window.location = './gastos.html'
-      // alert((error_msg['responseText']));
+      alert("El gasto no se pudo registrar, intentalo de nuevo.");
     }
   });
 
