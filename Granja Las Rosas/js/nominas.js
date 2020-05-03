@@ -85,7 +85,7 @@ function loadNominas() {
             usernameCol.setAttribute('class', 'col-md-3');
             var usernameText = document.createElement("label");
             usernameText.setAttribute('class', 'user-label');
-            usernameText.innerText = "Fecha : " + nominas.period_start;
+            usernameText.innerText = "Fecha: " + nominas.period_start;
 
             // var nameCol = document.createElement("div");
             // nameCol.setAttribute('class', 'col-md-3');
