@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas - Gastos</title>
-    <link rel="stylesheet" href="./css/gastos.css">
+    <title> Granja Las Rosas - Ciclo Nuevo</title>
+    <link rel="stylesheet" href="./css/agregarNuevoCiclo.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -18,7 +18,7 @@
       <nav>
         <ul>
           <li><a href="./nominas.html"> Nóminas </a></li>
-          <li style="background-color:#9DC6FE";><a href="./gastos.html"> Gastos </a></li>
+          <li ><a href="./gastos.html"> Gastos </a></li>
           <li><a href="#"> Sembradíos </a></li>
           <li style="background: #4480E9"><a id="logout_button"> Cerrar Sesion</a></li>
         </ul>
@@ -39,36 +39,47 @@
       </section>
 
       <section class="main">
-        <div class="formStyle" id="gastos">
+        <div class="formStyle" >
             <div class="row">
                <div class="col-md-12">
-                   <h3 class="title-label">Gastos</h3>
+                   <h3 class="title-label">Ciclo Nuevo</h3>
                </div>
            </div>
            <div class="row">
-            <div class="col-md-3">
-                <h4 class="title-label">Fecha</h4>
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Inicio de Ciclo:</label>
+                    <input class="formInput" type="date"  id="period_start" placeholder="">
+                </div>
+           </div>
+           <br>
+           <div class="row">
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Finalización de Ciclo:</label>
+                    <input class="formInput" type="date"  id="period_end" placeholder="">
+                </div>
             </div>
-            <div class="col-md-3">
-                <h4 class="title-label">Costo</h4>
-            </div>
-            <div class="col-md-6">
-                <h4 class="title-label">Descripción</h4>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Dia de paga:</label>
+                    <input class="formInput" type="date"  id="pay_date" placeholder="">
+                </div>
+           </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="button agregarGastoButton"  id="agregarNuevoCiclo"> Agregar Nuevo Ciclo </button>
+                </div>
             </div>
         </div>
        </div>
-       <div class="formStyle">
-            <div class="col-md-6">
-                <button onclick="window.location.href = './agregarGasto.html';" class="button agregarGasto"> Agregar Gasto </button>
-            </div>
-          </div>
-        </div>
       </section>
 
-
+  
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/gastos.js"></script>
+    <script type="text/javascript" src="js/agregarNuevoCiclo.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){

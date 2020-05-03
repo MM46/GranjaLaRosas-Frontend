@@ -66,22 +66,22 @@ getLogin()
 checkingAdmin()
 
 
-$('#agregarGasto').on('click', function () {
+$('#agregarNuevoCiclo').on('click', function () {
 
-  let date = $('#date').val();
-  let description = $('#description').val();
-  let cost = $('#cost').val();
+  let period_start = $('#period_start').val();
+  let period_end = $('#period_end').val();
+  let pay_date = $('#pay_date').val();
 
   json_to_send = {
-    "date": date,
-    "description": description,
-    "cost" : cost
+    "period_start": period_start,
+    "period_end": period_end,
+    "pay_date" : pay_date
   };
 
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/addExpense',
+    url: 'https://granjalasrosasback.web.app/newPayCycle',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token
@@ -90,9 +90,9 @@ $('#agregarGasto').on('click', function () {
     dataType: 'text',
     data: json_to_send,
     success: function (data) {
-      alert("Gasto Registrado con Exito");
+      alert("Nuevo Ciclo Registrado con Exito");
       console.log('success: ' + data);
-      window.location = './gastos.html'
+      window.location = './nominas.html'
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));
