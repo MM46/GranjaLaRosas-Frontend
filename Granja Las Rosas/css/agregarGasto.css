@@ -176,6 +176,7 @@ section.sidebar {
     background-color:gainsboro;
     margin-top: 50px;
     float:left;
+    text-align: center;
 }
 
 section.buttons {

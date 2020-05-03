@@ -116,7 +116,7 @@ $('#guardarCambiosGasto').on('click', function () {
       window.location = './gastos.html'
     },
     error: function (error_msg) {
-      alert("Los cambios no se han podido guardar, Intente de Nuevo.");
+      alert((error_msg['responseText']));
     }
   });
 

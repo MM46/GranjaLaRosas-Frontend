@@ -175,6 +175,7 @@ section.sidebar {
     background-color:white;
     margin-top: 50px;
     float:left;
+    text-align: center;
 }
 
 section.buttons {

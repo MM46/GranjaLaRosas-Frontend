@@ -43,25 +43,7 @@ function getLogin() {
     }
 }
   
-function checkingAdmin() {
-  $.ajax({
-    url: 'https://granjalasrosasback.web.app/dummyAdmin',
-    headers: {
-      'Content-Type': 'application/json',
 
-    },
-    method: 'GET',
-    dataType: 'json',
-    success: function (data) {
-      console.log("Eres admin");
-      // admin = true;
-    },
-    error: function (error_msg) {
-      alert((error_msg['responseText']));
-    }
-  });
-}
-old_pass = ""
 function getMyUser() {
   $.ajax({
     url: 'https://granjalasrosasback.web.app/getMyUser',
@@ -73,7 +55,7 @@ function getMyUser() {
     method: 'GET',
     dataType: 'json',
     success: function (data) {
-      old_pass = data.pass;
+      alert("get my user = " + data.pass);
       // admin = true;
     },
     error: function (error_msg) {
@@ -83,19 +65,22 @@ function getMyUser() {
 }
 
 getLogin()
-checkingAdmin()
-getMyUser()
+// getMyUser()
 
-function updatePass() {
+
+$('#changePassword_button').on('click', function () {
   let old_pass = $('#old_pass').val();
   let new_pass = $('#new_pass').val();
 
   json_to_send = {
     "old_pass": old_pass,
-    "new_pass": new_pass,
+    "new_pass": new_pass
   };
 
   json_to_send = JSON.stringify(json_to_send);
+
+  console.log("old pass: ", old_pass);
+  console.log("new pass: ", new_pass);
 
   $.ajax({
     url: 'https://granjalasrosasback.web.app/updatePass',
@@ -104,46 +89,14 @@ function updatePass() {
       'Authorization': token
     },
     method: 'PATCH',
-    dataType: 'json',
+    dataType: 'text',
     success: function (data) {
       console.log("updating pass");
-      alert("Contraseña de " + username + " cambiada con exito.");
+      alert("Contraseña de cambiada con exito.");
       // admin = true;
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));
     }
   });
-}
-
-
-$('#resetPassword_button').on('click', function () {
-  let username = $('#username').val();
-
-  json_to_send = {
-    "username": username
-  };
-
-  json_to_send = JSON.stringify(json_to_send);
-
-  $.ajax({
-    url: 'https://granjalasrosasback.web.app/resetPass',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': token
-    },
-    method: 'PATCH',
-    dataType: 'json',
-    data: json_to_send,
-    success: function (data) {
-      alert("La nueva contraseña de " + username + " es:" + data["pass"]);
-      console.log("reseting pass");
-      // updatePass();
-      // window.location = './signup.html'
-    },
-    error: function (error_msg) {
-      alert((error_msg['responseText']));
-    }
-  });
-
 });

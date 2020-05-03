@@ -21,15 +21,10 @@ $('#login_button').on('click', function () {
     success: function (data) {
       // guardar token en localstorage o cookie
       localStorage.setItem('token', data);
-      console.log('Succes');
-      window.location = './signup.html';
-      // console.log('Succes')
+      window.location = './signupEmployee.html';
     },
     error: function (error_msg) {
-      // alert((error_msg["responseText"]))
-      // alert("Usuario o Contraseña incorrecta. ")
-      console.log("ERROR!!!!");
-
+      alert((error_msg["responseText"]))
     }
   });
 });
@@ -40,5 +35,25 @@ function getLogin() {
     window.location = './signup.html';
   }
 }
+  
+// function checkingAdmin() {
+//   $.ajax({
+//     url: 'https://granjalasrosasback.web.app/dummyAdmin',
+//     headers: {
+//       'Content-Type': 'application/json',
 
+//     },
+//     method: 'GET',
+//     dataType: 'json',
+//     success: function (data) {
+//       console.log("Eres admin");
+//       // admin = true;
+//     },
+//     error: function (error_msg) {
+//       alert((error_msg['responseText']));
+//     }
+//   });
+// }
+
+// checkingAdmin();
 getLogin()

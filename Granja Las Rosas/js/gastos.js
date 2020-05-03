@@ -200,7 +200,7 @@ function loadGastos() {
             window.location = './gastos.html'
           },
           error: function (error_msg) {
-              alert("El gasto no se pudo eliminar, intentalo de nuevo.");
+            alert((error_msg['responseText']));
           }
         });
     }

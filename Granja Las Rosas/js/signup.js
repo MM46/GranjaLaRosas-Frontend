@@ -3,13 +3,6 @@ if (token) {
   token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
 }
 
-// function getToken() {
-//   console.log("hola token granja")
-//   console.log(token)
-// }
-
-// getToken()
-
 
 $('#logout_button').on('click', function () {
   $.ajax({
@@ -37,9 +30,32 @@ $('#logout_button').on('click', function () {
 
 function getLogin() {
   const token = localStorage.getItem('token');
-  if (!token) {
-    window.location = './Login.html';
-  }
+    if (!token) {
+      window.location = './Login.html';
+    }
+}
+  
+function checkingAdmin() {
+  $.ajax({
+    url: 'https://granjalasrosasback.web.app/getMyUser',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token
+    },
+    method: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      if(data.role == "employee"){
+        alert("No tienes permiso de Administrador");
+        window.location = './signUpEmployee.html';
+      }
+    },
+    error: function (error_msg) {
+      alert((error_msg['responseText']));
+    }
+  });
 }
 
 getLogin()
+checkingAdmin()
+

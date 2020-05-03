@@ -1,16 +1,8 @@
-// function myFunction() {
-//     var x = document.getElementById("myTopnav");
-//     if (x.className === "topnav") {
-//       x.className += " responsive";
-//     } else {
-//       x.className = "topnav";
-//     }
-//   }
-
 var token = localStorage.getItem('token');
 if (token) {
   token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
 }
+
 
 $('#logout_button').on('click', function () {
   $.ajax({
@@ -45,16 +37,17 @@ function getLogin() {
   
 function checkingAdmin() {
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/dummyAdmin',
+    url: 'https://granjalasrosasback.web.app/getMyUser',
     headers: {
       'Content-Type': 'application/json',
-
+      'Authorization': token
     },
     method: 'GET',
     dataType: 'json',
     success: function (data) {
-      console.log("Eres admin");
-      // admin = true;
+      if(data.role == "admin"){
+        window.location = './signUp.html';
+      }
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));
@@ -65,38 +58,3 @@ function checkingAdmin() {
 getLogin()
 checkingAdmin()
 
-
-$('#agregarGasto').on('click', function () {
-
-  let date = $('#date').val();
-  let description = $('#description').val();
-  let cost = $('#cost').val();
-
-  json_to_send = {
-    "date": date,
-    "description": description,
-    "cost" : cost
-  };
-
-  json_to_send = JSON.stringify(json_to_send);
-
-  $.ajax({
-    url: 'https://granjalasrosasback.web.app/addExpense',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': token
-    },
-    method: 'POST',
-    dataType: 'text',
-    data: json_to_send,
-    success: function (data) {
-      alert("Gasto Registrado con Exito1");
-      console.log('success: ' + data);
-      window.location = './gastos.html'
-    },
-    error: function (error_msg) {
-      alert((error_msg['responseText']));
-    }
-  });
-
-});

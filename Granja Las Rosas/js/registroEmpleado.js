@@ -97,9 +97,10 @@ $('#registrar_button').on('click', function () {
     dataType: 'json',
     data: json_to_send,
     success: function (data) {
-      alert("Usuario creado con exito");
-      console.log('success: ' + data);
-      window.location = './empleadosRegistrados.html'
+      // json = JSON.stringify(data);
+      alert("Usuario Registrado con Exito. Tu contraseña es:" + data["pass"]);
+      // console.log('success: ' + data);
+      // window.location = './empleadosRegistrados.html'
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));
