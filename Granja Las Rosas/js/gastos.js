@@ -76,6 +76,48 @@ function testJS(id) {
     document.location.href = url;
 }
 
+function removerGasto(id) {
+
+  var alertconfirm = confirm("¿Estas seguro que deseas borrar este Gasto?");
+
+  if(alertconfirm == true){
+      let date = document.getElementById(id + 'date').innerText;
+      let cost = document.getElementById(id + 'cost').innerText;
+      let description = document.getElementById(id + "description").innerText;
+
+      console.log("removerGasto()" );
+      console.log("index: " +  id);
+      console.log("date1: " + date);
+      console.log("cost1: " +  cost);
+      console.log("description1: " +  description);
+
+      json_to_send = {
+        "date": date,
+        "description": description,
+        "cost": cost
+      };
+    
+      json_to_send = JSON.stringify(json_to_send);
+    
+      $.ajax({
+        url: 'https://granjalasrosasback.web.app/removeExpense',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        },
+        method: 'PATCH',
+        dataType: 'text',
+        data: json_to_send,
+        success: function (data) {
+          alert("Gasto eliminado");
+          window.location = './gastos.html'
+        },
+        error: function (error_msg) {
+          alert((error_msg['responseText']));
+        }
+      });
+  }
+}
 
 
 function loadGastos() {
@@ -163,46 +205,4 @@ function loadGastos() {
 
   loadGastos()
 
-  function removerGasto(id) {
-
-    var alertconfirm = confirm("¿Estas seguro que deseas borrar este Gasto?");
-
-    if(alertconfirm == true){
-        let date = document.getElementById(id + 'date').innerText;
-        let cost = document.getElementById(id + 'cost').innerText;
-        let description = document.getElementById(id + "description").innerText;
-
-        console.log("removerGasto()" );
-        console.log("index: " +  id);
-        console.log("date1: " + date);
-        console.log("cost1: " +  cost);
-        console.log("description1: " +  description);
-
-        json_to_send = {
-          "date": date,
-          "description": description,
-          "cost": cost
-        };
-      
-        json_to_send = JSON.stringify(json_to_send);
-      
-        $.ajax({
-          url: 'https://granjalasrosasback.web.app/removeExpense',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token
-          },
-          method: 'PATCH',
-          dataType: 'text',
-          data: json_to_send,
-          success: function (data) {
-            alert("Gasto eliminado");
-            window.location = './gastos.html'
-          },
-          error: function (error_msg) {
-            alert((error_msg['responseText']));
-          }
-        });
-    }
-}
 
