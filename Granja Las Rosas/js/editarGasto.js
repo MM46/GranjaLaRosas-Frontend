@@ -43,27 +43,27 @@ function getLogin() {
     }
 }
   
-function checkingAdmin() {
-  $.ajax({
-    url: 'https://granjalasrosasback.web.app/dummyAdmin',
-    headers: {
-      'Content-Type': 'application/json',
+// function checkingAdmin() {
+//   $.ajax({
+//     url: 'https://granjalasrosasback.web.app/dummyAdmin',
+//     headers: {
+//       'Content-Type': 'application/json',
 
-    },
-    method: 'GET',
-    dataType: 'json',
-    success: function (data) {
-      console.log("Eres admin");
-      // admin = true;
-    },
-    error: function (error_msg) {
-      alert((error_msg['responseText']));
-    }
-  });
-}
+//     },
+//     method: 'GET',
+//     dataType: 'json',
+//     success: function (data) {
+//       console.log("Eres admin");
+//       // admin = true;
+//     },
+//     error: function (error_msg) {
+//       alert((error_msg['responseText']));
+//     }
+//   });
+// }
 
 getLogin()
-checkingAdmin()
+// checkingAdmin()
 
 
 $('#guardarCambiosGasto').on('click', function () {
@@ -112,8 +112,9 @@ $('#guardarCambiosGasto').on('click', function () {
     dataType: 'text',
     data: json_to_send,
     success: function (data) {
-      alert("Cambios guardados con Exito");
-      window.location = './gastos.html'
+      alert(data);
+      // alert("Cambios guardados con Exito");
+      // window.location = './gastos.html'
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));

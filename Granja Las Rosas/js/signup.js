@@ -45,6 +45,7 @@ function checkingAdmin() {
     method: 'GET',
     dataType: 'json',
     success: function (data) {
+      alert("role: " + data.role);
       if(data.role == "employee"){
         alert("No tienes permiso de Administrador");
         window.location = './signUpEmployee.html';
