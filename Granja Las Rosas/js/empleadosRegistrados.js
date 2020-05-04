@@ -65,6 +65,28 @@ function checkingAdmin() {
 getLogin()
 checkingAdmin()
 
+function editarSalario(id) {
+  alert("editarSalario");
+
+  // var username = document.getElementById(id + 'username').innerText;
+  // var date = document.getElementById(id + 'date').innerText;
+  // var salary = document.getElementById(id + 'salary').innerText;
+
+  // // alert("username: " + document.getElementById(id + 'username').innerText + " date: " + date + " salary: " + salary);
+  // var url = './agregarSalario.html?username=' + encodeURIComponent(username)  + '&date=' + encodeURIComponent(date) + '&salary=' + encodeURIComponent(salary);
+  // document.location.href = url;
+}
+
+function agregarSalario(id) {
+    var username = document.getElementById(id + 'username').innerText;
+    // var date = document.getElementById(id + 'date').innerText;
+    // var salary = document.getElementById(id + 'salary').innerText;
+
+    // alert("username: " + document.getElementById(id + 'username').innerText + " date: " + date + " salary: " + salary);
+    var url = './agregarSalario.html?username=' + encodeURIComponent(username);
+    document.location.href = url;
+}
+
 function loadEmpleados() {
     $.ajax({
       url: 'https://granjalasrosasback.web.app/getEmployees',
@@ -184,7 +206,7 @@ function loadEmpleados() {
             fourthRow.setAttribute('class', 'row');
 
             var amountCol = document.createElement("div");
-            amountCol.setAttribute('class', 'col-md-6');
+            amountCol.setAttribute('class', 'col-md-5');
             amountCol.setAttribute('id', 'amount');
 
             var amountText = document.createElement("h4");
@@ -192,37 +214,106 @@ function loadEmpleados() {
             amountText.innerText = "Cantidad:"
           
             var dateCol = document.createElement("div");
-            dateCol.setAttribute('class', 'col-md-6');
+            dateCol.setAttribute('class', 'col-md-5');
             dateCol.setAttribute('id', 'date');
 
             var dateText = document.createElement("h4");
             dateText.setAttribute('class', 'title-label');
             dateText.innerText = "Fecha de Pago:"
 
+            // var editButton = document.createElement("button");
+            // editButton.setAttribute('class', 'btn btn-info btn-lg');
+
             amountCol.appendChild(amountText);
             dateCol.appendChild(dateText);
 
             fourthRow.appendChild(amountCol);
             fourthRow.appendChild(dateCol);
+            // fourthRow.appendChild(editButton);
             lista.appendChild(fourthRow);
 
+            console.log(employees.salary);
+
             $.each(employees.salary, function(index, salarios) {
+              var row = document.createElement("div");
+              row.setAttribute('class', 'row');
+
+              var col1 = document.createElement("div");
+              col1.setAttribute('class', 'col-md-5');
+
               var amountText2 = document.createElement("label");
               amountText2.setAttribute('class', 'user-label');
-              amountText2.innerText = salarios.amount;
+              amountText2.innerText = "$" + salarios.amount;
+
+              col1.appendChild(amountText2);
+              row.appendChild(col1);
         
-              amountCol.appendChild(amountText2);
+              var col2 = document.createElement("div");
+              col2.setAttribute('class', 'col-md-5');
 
               var dateText2 = document.createElement("label");
               dateText2.setAttribute('class', 'user-label');
               dateText2.innerText = salarios.date;
-        
-              dateCol.appendChild(dateText2);
+
+              col2.appendChild(dateText2);
+              row.appendChild(col2);
+
+              lista.appendChild(row);
+
+              // var editSpan = document.createElement("span");
+              // editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
+              // var json_to_send = {
+              //   "username": employees.username,
+              //   "date": dateText2.innerText,
+              //   "salary": amountText2.innerText
+              // };
+              // json_to_send = JSON.stringify(json_to_send);
+             
+              // editSpan.setAttribute("id",salarios.date);
+              // dateText2.setAttribute("id", salarios.date + "date");
+              // amountText2.setAttribute("id", salarios.date + "salary");
+              // usernameText2.setAttribute("id", salarios.date + "username");
+
+              // editSpan.setAttribute("onclick","editarSalario(id)");
+              // editButton.appendChild(editSpan);
             });
+
+            var fifthRow = document.createElement("div");
+            fifthRow.setAttribute('class', 'row');
+
+            var addSalaryCol = document.createElement("div");
+            addSalaryCol.setAttribute('class', 'col-md-4');
+
+            var addSalaryButton = document.createElement("button");
+            addSalaryButton.setAttribute('class', 'button agregarSalario')
+            addSalaryButton.setAttribute("id",employees.username);
+            addSalaryButton.innerText = "Agregar Salario"
+            addSalaryButton.setAttribute("onclick","agregarSalario(id)");
+            usernameText2.setAttribute("id", employees.username+ "username");
+
+            addSalaryCol.appendChild(addSalaryButton);
+            fifthRow.appendChild(addSalaryCol);
+            
+            lista.appendChild(fifthRow);
+
+            // var fifthRow = document.createElement("div");
+            // fifthRow.setAttribute('class', 'row');
+
+            // var addSalaryCol = document.createElement("button");
+            // // addSalaryCol.setAttribute('class', 'col-md-12');
+            // removeCol.setAttribute("onclick","agregarSalario(id)");
+
+            // var addSalarySpan = document.createElement("span");
+            // addSalarySpan.setAttribute('class', 'glyphicon glyphicon-remove');
+
+            // addSalaryCol.appendChild(addSalarySpan);
+
+            // fifthRow.appendChild(addSalaryCol);
+            
+            // lista.appendChild(fifthRow);
 
             var divisionRow = document.createElement("div");
             divisionRow.setAttribute('class', 'row');
-
 
             var divisionCol = document.createElement("div");
             divisionCol.setAttribute('class', 'col-md-12');

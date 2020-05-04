@@ -69,74 +69,49 @@ function getParameters(){
   var parameters = location.search.substring(1).split("&");
 
   var temp = parameters[0].split("=");
-  date = unescape(temp[1]);
+  username = unescape(temp[1]);
 
-  temp = parameters[1].split("=");
-  description = unescape(temp[1]);
+  
+  // temp = parameters[1].split("=");
+  // date = unescape(temp[1]);
 
-  temp = parameters[2].split("=");
-  cost = unescape(temp[1]);
+  // temp = parameters[2].split("=");
+  // salary = unescape(temp[1]);
 
-  document.getElementById("date").value = date;
-  document.getElementById("description").value = description;
-  document.getElementById("cost").value = cost;
+  document.getElementById("username").textContent = username;
+  // document.getElementById("date").value = date;
+  // document.getElementById("salary").value = salary;
 
-  document.getElementById("date").setAttribute("prevValue", date);
-  document.getElementById("description").setAttribute("prevValue", description);
-  document.getElementById("cost").setAttribute("prevValue", cost);
 }
 getParameters();
 
+$('#agregarSalario').on('click', function () {
 
-$('#guardarCambiosGasto').on('click', function () {
-
+  let username = $('#username').text();
   let date = $('#date').val();
-  let description = $('#description').val();
-  let cost = $('#cost').val();
-
-  let oldDate = $('#date').attr("prevValue");
-  let oldDescription = $('#description').attr("prevValue");
-  let oldCost = $('#cost').attr("prevValue");
-
-
-  console.log("old values");
-  console.log("date = ", oldDate);
-  console.log("description = ", oldDescription);
-  console.log("Cost = ", oldCost);
-
-  console.log("new values");
-  console.log("date = ", date);
-  console.log("description = ", description);
-  console.log("Cost = ", cost);
+  let salary = $('#salary').val();
 
   json_to_send = {
-    "old": {
-      'date': oldDate,
-      'description': oldDescription,
-      'cost': oldCost
-    },
-    "new": {
-      "date": date,
-      "description": description,
-      "cost" : cost
-    }
+    'username': username,
+    'date': date,
+    'salary': salary
   };
 
   json_to_send = JSON.stringify(json_to_send);
-  
+  console.log(json_to_send);
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/updateExpense',
+    url: 'https://granjalasrosasback.web.app/updateSalary',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token
     },
     method: 'PATCH',
-    dataType: 'text',
+    dataType: 'json',
     data: json_to_send,
     success: function (data) {
-      alert(data);
-      // alert("Cambios guardados con Exito");
-      // window.location = './gastos.html'
+      // alert(data);
+      alert("El salario se ha agregado con exito.");
+      window.location = './empleadosRegistrados.html'
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));

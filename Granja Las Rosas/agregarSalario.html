@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas - Editar Gasto</title>
-    <link rel="stylesheet" href="./css/editarGasto.css">
+    <title> Granja Las Rosas - Agregar Salario</title>
+    <link rel="stylesheet" href="./css/agregarSalario.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -42,34 +42,34 @@
         <div class="formStyle" >
             <div class="row">
                <div class="col-md-12">
-                   <h3 class="title-label">Editar Gasto</h3>
+                   <h3 class="title-label">Agregar Salario</h3>
                </div>
            </div>
            <div class="row">
+            <div class="col-md-6">
+                <h4 for="cost" class="title-label">Usuario:</h4>
+                <label class="formInput" id= "username" placeholder=""> </label>
+            </div>
+          </div>
+          <br>
+           <div class="row">
                 <div class="col-md-6">
-                    <label for="date" class="title-label">Fecha:</label>
-                    <input class="formInput" type="date" prevValue = "" id="date" placeholder="">
-                    <!-- <input class="formInput" type="text"  id="date" placeholder="Descripción del Gasto"> -->
+                    <label for="date" class="title-label">Fecha de Pago:</label>
+                    <input class="formInput" onload="getDate()" type="date"  id="date" placeholder="">
                 </div>
            </div>
            <br>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="date" class="title-label">Descripción del Gasto:</label>
-                    <input class="formInput" type="text" prevValue = "" id="description" placeholder="Descripción del Gasto"> </input>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="cost" class="title-label">Costo:</label>
-                    <input class="formInput" type="number" prevValue = "" id="cost" placeholder="0.00"> $</input>
+                    <label for="date" class="title-label">Cantidad:</label>
+                    <input class="formInput" type="text"  id="salary" placeholder="0.00"> $</input>
                 </div>
             </div>
             <br>
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <button class="button editarGastoButton"  id="guardarCambiosGasto"> Guardar Cambios </button>
+                    <button class="button agregarSalario"  id="agregarSalario"> Agregar Salario  </button>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
   
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/editarGasto.js"></script>
+    <script type="text/javascript" src="js/agregarSalario.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){
@@ -87,7 +87,7 @@
           $('.buttonStyle').toggleClass('hiding')
         })
       })
-      
+
     </script>
   </body>
 

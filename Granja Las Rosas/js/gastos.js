@@ -66,8 +66,7 @@ getLogin()
 checkingAdmin()
 
 
-function testJS(id) {
-    console.log("testJS()");
+function editarGasto(id) {
     console.log("id = ", id);
     var date = document.getElementById(id + 'date').innerText,
     description = document.getElementById(id + 'description').innerText,
@@ -160,8 +159,7 @@ function loadGastos() {
             var editCol = document.createElement("a");
             editCol.setAttribute('class', 'btn btn-info btn-lg');
             editCol.setAttribute('id', index);
-            editCol.setAttribute("onclick","testJS(id)");
-            // editCol.setAttribute('href', './editarGasto.html');
+            editCol.setAttribute("onclick","editarGasto(id)");
             var editSpan = document.createElement("span");
             editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
 
@@ -170,7 +168,6 @@ function loadGastos() {
             
             removeCol.setAttribute('id', index);
             removeCol.setAttribute("onclick","removerGasto(id)");
-            // removeCol.setAttribute("onclick","removerGasto(description)");
             var removeSpan = document.createElement("span");
             removeSpan.setAttribute('class', 'glyphicon glyphicon-remove');
 
