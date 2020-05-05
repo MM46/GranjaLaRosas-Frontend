@@ -78,39 +78,89 @@ function loadNominas() {
         console.log("nominas");
         console.log(data);
         var lista = document.getElementById("nominas");
+
+        var firstRow = document.createElement("div");
+        firstRow.setAttribute('class', 'row');
+
+        var periodStartCol = document.createElement("div");
+        periodStartCol.setAttribute('class', 'col-md-3');
+        periodStartCol.setAttribute('id', 'period_start');
+
+        var periodStartText = document.createElement("h4");
+        periodStartText.setAttribute('class', 'title-label');
+        periodStartText.innerText = "Fecha de Inicio:"
+
+        var periodEndCol = document.createElement("div");
+        periodEndCol.setAttribute('class', 'col-md-3');
+        periodEndCol.setAttribute('id', 'period_end');
+
+        var periodEndText = document.createElement("h4");
+        periodEndText.setAttribute('class', 'title-label');
+        periodEndText.innerText = "Fecha de Finalización:"
+
+        var payDateCol = document.createElement("div");
+        payDateCol.setAttribute('class', 'col-md-3');
+        payDateCol.setAttribute('id', 'pay_date');
+
+        var payDateText = document.createElement("h4");
+        payDateText.setAttribute('class', 'title-label');
+        payDateText.innerText = "Dia de Paga:"
+        
+        periodStartCol.appendChild(periodStartText);
+        firstRow.appendChild(periodStartCol);
+
+        periodEndCol.appendChild(periodEndText);
+        firstRow.appendChild(periodEndCol);
+
+        payDateCol.appendChild(payDateText);
+        firstRow.appendChild(payDateCol);
+
+        lista.appendChild(firstRow);
+
         $.each(data, function(index, nominas) {
-            var row = document.createElement("div");
-            row.setAttribute('class', 'row');
-            var usernameCol = document.createElement("div");
-            usernameCol.setAttribute('class', 'col-md-3');
-            var usernameText = document.createElement("label");
-            usernameText.setAttribute('class', 'user-label');
-            usernameText.innerText = "Fecha: " + nominas.period_start;
-
-            // var nameCol = document.createElement("div");
-            // nameCol.setAttribute('class', 'col-md-3');
-            // var nameText = document.createElement("label");
-            // nameText.setAttribute('class', 'user-label');
-            // nameText.innerText = employees.name;
-
-            // var lastnameCol = document.createElement("div");
-            // lastnameCol.setAttribute('class', 'col-md-6');
-            // var lastnameText = document.createElement("label");
-            // lastnameText.setAttribute('class', 'user-label');
-            // lastnameText.innerText = employees.lastname1 + " " + employees.lastname2;
-
-            usernameCol.appendChild(usernameText);
-            row.appendChild(usernameCol);
-
-            // nameCol.appendChild(nameText);
-            // row.appendChild(nameCol);
-
-            // lastnameCol.appendChild(lastnameText);
-            // row.appendChild(lastnameCol);
-
-            lista.appendChild(row);
-
+          var secondRow = document.createElement("div");
+          secondRow.setAttribute('class', 'row');
+  
+          var periodStartCol2 = document.createElement("div");
+          periodStartCol2.setAttribute('class', 'col-md-3');
+          // periodStartCol2.setAttribute('id', 'period_start');
+  
+          var periodStartText2 = document.createElement("h5");
+          periodStartText2.setAttribute('class', 'title-label');
+          periodStartText2.innerText = nominas.period_start;
+  
+          var periodEndCol2 = document.createElement("div");
+          periodEndCol2.setAttribute('class', 'col-md-3');
+          // periodEndCol2.setAttribute('id', 'period_end');
+  
+          var periodEndText2 = document.createElement("h5");
+          periodEndText2.setAttribute('class', 'title-label');
+          periodEndText2.innerText = nominas.period_end;
+  
+          var payDateCol2 = document.createElement("div");
+          payDateCol2.setAttribute('class', 'col-md-3');
+          // payDateCol2.setAttribute('id', 'pay_date');
+  
+          var payDateText2 = document.createElement("h5");
+          payDateText2.setAttribute('class', 'title-label');
+          payDateText2.innerText = nominas.pay_date;
+          
+          periodStartCol2.appendChild(periodStartText2);
+          secondRow.appendChild(periodStartCol2);
+  
+          periodEndCol2.appendChild(periodEndText2);
+          secondRow.appendChild(periodEndCol2);
+  
+          payDateCol2.appendChild(payDateText2);
+          secondRow.appendChild(payDateCol2);
+          
+          lista.appendChild(secondRow);
         })
+
+        // $.each(data, function(index, employees) {
+        //   console.log("employees = ")
+        //   console.log(data.index);
+        // })
       },
 
       error: function (error_msg) {
@@ -119,5 +169,26 @@ function loadNominas() {
     });
   }
 
-
   loadNominas()
+
+  function loadEmpleados() {
+    $.ajax({
+      url: 'https://granjalasrosasback.web.app/getEmployees',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token
+      },
+      method: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        console.log("empleados");
+        console.log(data);
+      },
+
+      error: function (error_msg) {
+        alert((error_msg['responseText']));
+      }
+    });
+  }
+
+  loadEmpleados();

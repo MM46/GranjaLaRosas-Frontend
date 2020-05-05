@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas - Empleados Registrados</title>
-    <link rel="stylesheet" href="./css/empleadosRegistrados.css">
+    <title> Granja Las Rosas - Nueva Siembra</title>
+    <link rel="stylesheet" href="./css/agregarNuevaSiembra.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -18,7 +18,7 @@
       <nav>
         <ul>
           <li><a href="./nominas.html"> Nóminas </a></li>
-          <li><a href="./gastos.html"> Gastos </a></li>
+          <li ><a href="./gastos.html"> Gastos </a></li>
           <li><a href="./sembradios.html"> Sembradíos </a></li>
           <li style="background: #4480E9"><a id="logout_button"> Cerrar Sesion</a></li>
         </ul>
@@ -30,7 +30,7 @@
         <h3>Menu</h3>
 
         <section class="buttons">
-          <a href="./empleadosRegistrados.html"><button style="background-color:#9DC6FE"; class="menuButton"> Empleados Registrados</button></a>
+          <a href="./empleadosRegistrados.html"><button  class="menuButton"> Empleados Registrados</button></a>
           <br>
           <a href="./registroEmpleado.html"><button class="menuButton"> Registrar Empleado</button></a>
           <br>
@@ -39,25 +39,58 @@
       </section>
 
       <section class="main">
-        <div class="formStyle" id="usuarios">
+        <div class="formStyle" >
             <div class="row">
                <div class="col-md-12">
-                <h2 class="title-label">Empleados Registrados</h2>
+                   <h3 class="title-label">Nueva Siembra</h3>
                </div>
            </div>
            <div class="row">
-            <div class="col-md-12" style="background: grey;">
-             
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Temporada:</label>
+                    <input class="formInput" type="text"  id="season" placeholder="temporada">
+                </div>
+           </div>
+           <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="date" class="title-label">Semilla:</label>
+                    <input class="formInput" type="text"  id="seed" placeholder="semilla">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="cost" class="title-label">Fecha de Plantación</label>
+                    <input class="formInput" type="date"  id="planting_date" placeholder=""></input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="cost" class="title-label">Fecha de Cosecha</label>
+                    <input class="formInput" type="date"  id="harvest_date" placeholder=""></input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="cost" class="title-label">Progreso hasta el dia de Hoy</label>
+                    <input class="formInput" type="text"  id="progress" placeholder="100"> %</input>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="button agregarSiembra"  id="agregarSiembra"> Agregar Siembra </button>
+                </div>
             </div>
         </div>
-
        </div>
       </section>
 
   
     
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/empleadosRegistrados.js"></script>
+    <script type="text/javascript" src="js/agregarNuevaSiembra.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.menu-toggle').click(function(){
