@@ -87,6 +87,17 @@ function drawChart() {
   }
 }
 
+function editarSeason(id) {
+
+  var season = document.getElementById(id + 'season').innerText,
+  seed = document.getElementById(id + 'seed').innerText,
+  planting_date = document.getElementById(id + 'planting_date').innerText,
+  harvest_date = document.getElementById(id + 'harvest_date').innerText,
+  progress = document.getElementById(id + 'progress').innerText,
+      url = './editarSeason.html?season=' + encodeURIComponent(season)  + '&seed=' + encodeURIComponent(seed) + '&planting_date=' + encodeURIComponent(planting_date) + '&harvest_date=' + encodeURIComponent(harvest_date) + '&progress=' + encodeURIComponent(progress);
+  document.location.href = url;
+}
+
 function loadSiembras() {
     $.ajax({
       url: 'https://granjalasrosasback.web.app/getSiembras',
@@ -98,87 +109,129 @@ function loadSiembras() {
       dataType: 'json',
       success: function (data) {
         // console.log("sembradios");
-        // console.log(data);
+        console.log(data);
         var lista = document.getElementById("siembras");
         $.each(data, function(index, siembras) {
-          // console.log(siembras[0].season);
-          var firstRow = document.createElement("div");
-          firstRow.setAttribute('class', 'row');
-          firstRow.setAttribute("style", "background:#D0D2D5");
-
-          var seasonCol = document.createElement("div");
-          seasonCol.setAttribute('class', 'col-md-12');
-          seasonCol.setAttribute('id', 'season');
-
-          var seasonText = document.createElement("h4");
-          seasonText.setAttribute('class', 'title-label');
-          seasonText.innerText = "Temporada: " +  siembras[0].season;
-        
-
-          seasonCol.appendChild(seasonText);
-
-          firstRow.appendChild(seasonCol);
-          lista.appendChild(firstRow);
 
           $.each(siembras, function(index2, siembra) {
-            // console.log(siembra);
-            var seedRow = document.createElement("div");
-            seedRow.setAttribute('class', 'row');
+            var firstRow = document.createElement("div");
+            firstRow.setAttribute('class', 'row');
+            
+            var seasonCol = document.createElement("div");
+            seasonCol.setAttribute('class', 'col-md-10');
   
-            var seedCol = document.createElement("div");
-            seedCol.setAttribute('class', 'col-md-12');
-            seedCol.setAttribute('id', 'seed');
+            var seasonText = document.createElement("h4");
+            seasonText.setAttribute('class', 'title-label');
+            seasonText.setAttribute('style', 'color:white');
+            seasonText.innerText = "Temporada: ";
+  
+            var seasonText2 = document.createElement("h4");
+            seasonText2.setAttribute('id', index + "season");
+            seasonText2.setAttribute('style',"display: none");
+            seasonText2.innerText = siembras[0].season;
+            seasonText.innerText += seasonText2.innerText;
+          
+            var editCol = document.createElement("a");
+            editCol.setAttribute('class', 'btn btn-info btn-lg');
+            editCol.setAttribute('style',"display: block;");
+            editCol.setAttribute('id', index);
+            editCol.setAttribute("onclick","editarSeason(id)");
+            var editSpan = document.createElement("span");
+            editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
+            
+            seasonCol.appendChild(seasonText2);
+            seasonCol.appendChild(seasonText);
+            editCol.appendChild(editSpan);
+  
+            firstRow.appendChild(seasonCol);
+            lista.appendChild(firstRow);
+            firstRow.appendChild(editCol);
+
+
+            // console.log(siembra);
+            var row = document.createElement("div");
+            row.setAttribute('class', 'row');
+  
+            var col = document.createElement("div");
+            col.setAttribute('class', 'col-md-6');
   
             var seedText = document.createElement("h4");
             seedText.setAttribute('class', 'title-label');
-            seedText.innerText = "Semilla: " +  siembra.seed;
-  
-            seedCol.appendChild(seedText);
-  
-            seedRow.appendChild(seedCol);
-            lista.appendChild(seedRow);
+            seedText.innerText = "Siembra: ";
 
-            var datesRow = document.createElement("div");
-            datesRow.setAttribute('class', 'row');
-  
-            var plantingDateCol = document.createElement("div");
-            plantingDateCol.setAttribute('class', 'col-md-6');
-            plantingDateCol.setAttribute('id', 'planting_date');
-  
-            var platingDateText = document.createElement("h4");
-            platingDateText.setAttribute('class', 'title-label');
-            platingDateText.innerText = "Dia de Plantación: " +  siembra.planting_date;
-  
-            plantingDateCol.appendChild(platingDateText);
-  
-            datesRow.appendChild(plantingDateCol);
+            var seedText2 = document.createElement("h4");
+            seedText2.setAttribute('class', 'title-label');
+            seedText2.setAttribute('style',"display: none");
+            seedText2.setAttribute('id', index + "seed");
+            seedText2.innerText =  siembra.seed;
 
-            var harvestDateCol = document.createElement("div");
-            harvestDateCol.setAttribute('class', 'col-md-6');
-            harvestDateCol.setAttribute('id', 'harvest_date');
+            seedText.innerText += seedText2.innerText
+
+  
+            var plantingDateText = document.createElement("h4");
+            plantingDateText.setAttribute('class', 'title-label');
+            plantingDateText.innerText = "Dia de Plantación: ";
+
+            var plantingDateText2 = document.createElement("h4");
+            plantingDateText2.setAttribute('class', 'title-label');
+            plantingDateText2.setAttribute('style',"display: none");
+            plantingDateText2.setAttribute('id', index + "planting_date");
+            plantingDateText2.innerText =  siembra.planting_date;
+
+            plantingDateText.innerText += plantingDateText2.innerText
   
             var harvestDateText = document.createElement("h4");
             harvestDateText.setAttribute('class', 'title-label');
-            harvestDateText.innerText = "Dia de Cosecha: " +  siembra.harvest_date;
-  
-            harvestDateCol.appendChild(harvestDateText);
-  
-            datesRow.appendChild(harvestDateCol);
+            harvestDateText.innerText = "Dia de Cosecha: ";
 
-            lista.appendChild(datesRow);
+            var harvestDateText2 = document.createElement("h4");
+            harvestDateText2.setAttribute('class', 'title-label');
+            harvestDateText2.setAttribute('style',"display: none");
+            harvestDateText2.setAttribute('id', index + "harvest_date");
+            harvestDateText2.innerText =  siembra.harvest_date;
 
-            var progressRow = document.createElement("div");
+            harvestDateText.innerText += harvestDateText2.innerText
+  
+  
+            col.appendChild(seedText);
+            col.appendChild(plantingDateText);
+            col.appendChild(harvestDateText);
+
+            col.appendChild(seedText2);
+            col.appendChild(plantingDateText2);
+            col.appendChild(harvestDateText2);
+            row.appendChild(col);
+            lista.appendChild(row);
+            // season=2020invierno&seed=maiz&planting_date=2020-05-09&harvest_date=2020-05-03&progress=50
+            // season=2020primavera&seed=frijol&planting_date=2020-05-02&harvest_date=2020-05-09&progress=50
+            
+
+            var col2 = document.createElement("div");
+            col2.setAttribute('class', 'col-md-6');
+
+
+            var progressCol = document.createElement("div");
             var chartId = index + "" + index2  + "chart";
-            progressRow.setAttribute("id", chartId);
-            progressRow.setAttribute('style', "width: 900px; height: 500px;");
-            progressRow.setAttribute('completado', siembra.progress);
-            progressRow.setAttribute('incompleto', 100 - siembra.progress);
+            progressCol.setAttribute('id', chartId);
+            progressCol.setAttribute('style', "width: 450px; height: 250px;");
+            progressCol.setAttribute('completado', siembra.progress);
+            progressCol.setAttribute('incompleto', 100 - siembra.progress);
+
+            var progressText = document.createElement("h4");
+            progressText.setAttribute('class', 'title-label');
+            progressText.setAttribute('id', index + "progress");
+            progressText.setAttribute('style',"display: none");
+            progressText.innerText =  siembra.progress;
             
             progressCharts.push(chartId);
 
-            lista.appendChild(progressRow);
-
-
+            col2.appendChild(progressCol);
+            row.appendChild(col2);
+            row.appendChild(progressText);
+            lista.appendChild(row);
+          });
+        });
+        google.charts.setOnLoadCallback(drawChart());
             var divisionRow = document.createElement("div");
             divisionRow.setAttribute('class', 'row');
 
@@ -189,12 +242,7 @@ function loadSiembras() {
             divisionRow.appendChild(divisionCol);
             
             lista.appendChild(divisionRow);
-          });
-        });
-        // console.log("progressChartslength");
-        // console.log(progressCharts.length);
-        google.charts.setOnLoadCallback(drawChart());
-        // drawChart();
+
       },
 
       error: function (error_msg) {
