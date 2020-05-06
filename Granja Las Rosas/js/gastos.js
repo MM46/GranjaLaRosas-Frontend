@@ -110,6 +110,7 @@ function removerGasto(id) {
         success: function (data) {
           alert("Gasto eliminado");
           window.location = './gastos.html'
+
         },
         error: function (error_msg) {
           alert((error_msg['responseText']));
@@ -147,7 +148,7 @@ function loadGastos() {
             var costText = document.createElement("label");
             costText.setAttribute('class', 'user-label');
             costText.setAttribute('id', index+'cost');
-            costText.innerText = gastos[0].cost;
+            costText.innerText = "$ " + gastos[0].cost + ".00";
 
             var descriptionCol = document.createElement("div");
             descriptionCol.setAttribute('class', 'col-md-4');
@@ -191,6 +192,13 @@ function loadGastos() {
 
             lista.appendChild(row);
         })
+        var loading = document.getElementById("loading");
+        var info = document.getElementById("info");
+        var loading = document.getElementById("loading");
+        if (loading.style.display === "block") {
+          loading.style.display = "none";
+          info.style.display = "block";
+        }
       },
 
       error: function (error_msg) {

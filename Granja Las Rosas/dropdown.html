@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title> Granja Las Rosas - Ciclo Nuevo </title>
+<title> Granja Las Rosas - Agregar Gasto </title>
 <link rel="stylesheet" href="./css/css.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,76 +41,66 @@
 </div>
 
 
-  <section class="main">
+<section class="main">
     <div class="formStyle" >
         <div class="row">
-           <div class="col-md-4">
-              
-           </div>
-           <div class="col-md-4">
-                <h3 class="title-label">Ciclo Nuevo</h3>
+            <div class="col-md-4">
             </div>
             <div class="col-md-4">
-                
-            </div>
-       </div>
+                 <h3 class="title-label">Agregar Gasto</h3>
+             </div>
+             <div class="col-md-4">
+             </div>
+        </div>
        <div class="row">
         <div class="col-md-3">
-
         </div>
-            <div class="col-md-6">
-                <label for="date" class="title-label">Inicio de Ciclo:</label>
-                <input class="form-control form-control-sm formInput" type="date"  id="period_start" placeholder="">
-            </div>
-            <div class="col-md-3">
-
-            </div>
-       </div>
-       <!-- <br> -->
-       
-       <div class="row">
-            <div class="col-md-3">
-
-            </div>
-            <div class="col-md-6">
-                <label for="date" class="title-label">Finalización de Ciclo:</label>
-                <input class="form-control form-control-sm formInput" type="date"  id="period_end" placeholder="">
-            </div>
-            <div class="col-md-3">
-
-            </div>
+        <div class="col-md-6">
+            <label for="date" class="title-label">Fecha:</label>
+            <input class="form-control form-control-sm formInput" type="date"  id="date" placeholder="">
         </div>
+        <div class="col-md-3">
+        </div>
+     </div>
+     <br>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <label for="date" class="title-label">Descripción del Gasto:</label>
+            <input class="form-control form-control-sm formInput" type="text"  id="description" placeholder="descripcion">
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <label for="date" class="title-label">Costo:</label>
+            <input class="form-control form-control-sm formInput" type="number"  id="cost" placeholder="">
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+        <br>
+        <br>
         <div class="row">
             <div class="col-md-3">
 
             </div>
             <div class="col-md-6">
-                <label for="date" class="title-label">Dia de paga:</label>
-                <input class="form-control form-control-sm formInput" type="date"  id="pay_date" placeholder="">
+                <button class="button yellow"  id="agregarGasto"> Agregar Gasto </button>
             </div>
             <div class="col-md-3">
-
-            </div>
-       </div>
-       <br>
-       <br>
-        <div class="row">
-            <div class="col-md-3">
-
-            </div>
-            <div class="col-md-6">
-                <button class="button yellow"  id="agregarNuevoCiclo"> Agregar Nuevo Ciclo </button>
-            </div>
-            <div class="col-md-3">
-
-            </div>
+        </div>
         </div>
     </div>
    </div>
   </section>
 
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/agregarNuevoCiclo.js"></script>
+    <script type="text/javascript" src="js/agregarGasto.js"></script>
 </body>
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">
