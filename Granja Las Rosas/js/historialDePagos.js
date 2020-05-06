@@ -77,19 +77,19 @@ function loadHistorial() {
           amountCol.setAttribute('class', 'col-md-2');
           var amountText = document.createElement("label");
           amountText.setAttribute('class', 'user-label');
-          amountText.innerText = historial.amount;
+          amountText.innerText = "$ " + historial.amount + ".00";
 
           var deductionsCol = document.createElement("div");
           deductionsCol.setAttribute('class', 'col-md-2');
           var deductionsText = document.createElement("label");
           deductionsText.setAttribute('class', 'user-label');
-          deductionsText.innerText = historial.deductions;
+          deductionsText.innerText = "$ " + historial.deductions + ".00";
 
           var netPayCol = document.createElement("div");
           netPayCol.setAttribute('class', 'col-md-2');
           var netPayText = document.createElement("label");
           netPayText.setAttribute('class', 'user-label');
-          netPayText.innerText = historial.net_pay;
+          netPayText.innerText = "$ " + historial.net_pay + ".00";
 
           startPeriodCol.appendChild(startPeriodText);
           row.appendChild(startPeriodCol);
@@ -113,6 +113,13 @@ function loadHistorial() {
           lista.appendChild(row);
 
       })
+      var loading = document.getElementById("loading");
+      var info = document.getElementById("info");
+      var loading = document.getElementById("loading");
+      if (loading.style.display === "block") {
+        loading.style.display = "none";
+        info.style.display = "block";
+      }
     },
 
     error: function (error_msg) {

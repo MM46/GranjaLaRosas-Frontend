@@ -106,7 +106,7 @@ $('#agregarSalario').on('click', function () {
       'Authorization': token
     },
     method: 'PATCH',
-    dataType: 'json',
+    dataType: 'text',
     data: json_to_send,
     success: function (data) {
       // alert(data);

@@ -243,7 +243,7 @@ function loadEmpleados() {
 
               var amountText2 = document.createElement("label");
               amountText2.setAttribute('class', 'user-label');
-              amountText2.innerText = "$" + salarios.amount;
+              amountText2.innerText = "$ " + salarios.amount + ".00"; 
 
               col1.appendChild(amountText2);
               row.appendChild(col1);
@@ -285,7 +285,7 @@ function loadEmpleados() {
             addSalaryCol.setAttribute('class', 'col-md-4');
 
             var addSalaryButton = document.createElement("button");
-            addSalaryButton.setAttribute('class', 'button agregarSalario')
+            addSalaryButton.setAttribute('class', 'button yellow')
             addSalaryButton.setAttribute("id",employees.username);
             addSalaryButton.innerText = "Agregar Salario"
             addSalaryButton.setAttribute("onclick","agregarSalario(id)");
@@ -317,13 +317,20 @@ function loadEmpleados() {
 
             var divisionCol = document.createElement("div");
             divisionCol.setAttribute('class', 'col-md-12');
-            divisionCol.setAttribute('style', 'background:grey');
+            divisionCol.setAttribute('style', 'opacity: 50%; background:grey; height: 5px');
 
             divisionRow.appendChild(divisionCol);
             
             lista.appendChild(divisionRow);
             
         })
+        var loading = document.getElementById("loading");
+        var info = document.getElementById("info");
+        var loading = document.getElementById("loading");
+        if (loading.style.display === "block") {
+          loading.style.display = "none";
+          info.style.display = "block";
+        }
       },
 
       error: function (error_msg) {
