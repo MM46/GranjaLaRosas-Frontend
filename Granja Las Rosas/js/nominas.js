@@ -157,10 +157,13 @@ function loadNominas() {
           lista.appendChild(secondRow);
         })
 
-        // $.each(data, function(index, employees) {
-        //   console.log("employees = ")
-        //   console.log(data.index);
-        // })
+        var loading = document.getElementById("loading");
+        var info = document.getElementById("info");
+        var loading = document.getElementById("loading");
+        if (loading.style.display === "block") {
+          loading.style.display = "none";
+          info.style.display = "block";
+        }
       },
 
       error: function (error_msg) {

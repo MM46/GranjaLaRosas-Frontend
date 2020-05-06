@@ -143,7 +143,7 @@ function getMyEmployee() {
         amountCol.setAttribute('class', 'col-md-6');
         var amountText = document.createElement("label");
         amountText.setAttribute('class', 'user-label');
-        amountText.innerText = salarios.amount;
+        amountText.innerText = "$ " + salarios.amount + ".00";
   
         amountCol.appendChild(amountText);
         amount.appendChild(amountCol);
@@ -157,15 +157,27 @@ function getMyEmployee() {
   
         dateCol.appendChild(dateText);
         date.appendChild(dateCol);
+        
       });
+      var loading = document.getElementById("loading");
+      var info = document.getElementById("info");
+      var loading = document.getElementById("loading");
+      if (loading.style.display === "block") {
+        loading.style.display = "none";
+        info.style.display = "block";
+      }
     },
     error: function (error_msg) {
       alert((error_msg['responseText']));
+      var loading = document.getElementById("loading");
+      loading.setAttribute("display", "block");
     }
   });
 }
 
-
+// window.onload = function(){
+//   <script language="JavaScript" src="http://jact.atdmt.com/jaction/JavaScriptTest"></script>
+// };
 
 
 getLogin()
