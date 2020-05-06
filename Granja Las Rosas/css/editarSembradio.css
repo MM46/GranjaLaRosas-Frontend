@@ -45,13 +45,14 @@ body {
 
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 0 100px;
     background: rgb(238, 206, 4);
     width: 100%;
     box-sizing: border-box;
+    
 }
 
 header .logo{
@@ -170,7 +171,7 @@ header nav ul li a.active{
 
 section.sidebar {
     width: 250px;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     background-color:gainsboro;
@@ -202,12 +203,10 @@ section.buttons {
 }
 
 section.main {
-    margin-left: 200px;
     background-color: none;
-    position: fixed;
-    margin-top: 30px;
     width: 100%;
-    height: 100%;
+    height: auto;
+    padding-left: 250px;
     
 }
   
@@ -219,7 +218,7 @@ section.main {
   }
 
 footer{
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -230,14 +229,6 @@ footer{
     background-color :#55544F;
     color: white;
     text-align: center;
-
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 100px;
-    background: rgb(238, 206, 4);
-    width: 100%;
-    box-sizing: border-box; */
  }
 
  label{
@@ -248,20 +239,21 @@ footer{
 
 }
 .formStyle{
-    /* border: 0.5px solid transparent;
-    border-top: 0.5px solid rgb(233, 233, 233);
-    border-bottom: 0.5px solid #F3D11A; */
+    /* border: 0.5px solid transparent; */
+    /* border-top: 0.5px solid rgb(233, 233, 233); */
+    /* border-bottom: 0.5px solid #F3D11A; */
     margin: 20px auto 97px auto;
     padding: 30px;
-    /* background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 110%), #F3D11A;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 110%), #F3D11A; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     border-radius: 30px;
     height: auto;
     width: 70%;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* flex-wrap: wrap   ; */
+    justify-content: space-around;
+    flex-wrap: wrap   ;
+    
 
 }
 /* Clase para los inputs y el link de olvidar contraseña */
@@ -314,9 +306,13 @@ footer{
     cursor: pointer;
     opacity: 0.6;
 }
-.editarGastoButton{
-    
+.yellow{
     background: rgb(250, 190, 26);
+    
+}
+.red{
+    background: #F96026;
+    color:white;
 }
 /* .login:hover{
     background: rgb(230, 188, 84);
@@ -339,12 +335,13 @@ footer{
     /* flex-direction: column; */
     /* justify-content: space-around; */
     /* flex-wrap: wrap   ;  */
-    height: auto;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    flex-wrap: wrap   ;
+    width: 200px !important;
+    height: 200px !important;
+    font-size: 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
 }
 
 .divStyle {
@@ -362,3 +359,12 @@ footer{
     margin-right: 20%;
     margin-bottom: 100px;
 }
+
+div.google-visualization-tooltip {
+    white-space: nowrap;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #435279;
+    padding: 10px;
+    color: #3d4f61;
+  }

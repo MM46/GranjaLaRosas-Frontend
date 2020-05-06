@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title> Granja Las Rosas - Editar Temporada</title>
+    <title> Granja Las Rosas - Editar Siembra</title>
     <link rel="stylesheet" href="./css/editarSembradio.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,22 +42,51 @@
         <div class="formStyle" >
             <div class="row">
                <div class="col-md-12">
-                   <h3 class="title-label">Editar Temporada</h3>
+                   <h3 class="title-label">Editar Siembra</h3>
                </div>
            </div>
            <div class="row">
                 <div class="col-md-6">
-                    <label for="date" class="title-label">Temporada:</label>
+                    <label for="season" class="title-label">Temporada:</label>
                     <input class="formInput" type="text" prevValue = "" id="season" placeholder="">
                 </div>
            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="seed" class="title-label">Siembra:</label>
+                    <input class="formInput" type="text" prevValue = "" id="seed" placeholder=""> </input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="planting_date" class="title-label">Dia de Plantación:</label>
+                    <input class="formInput" type="date" prevValue = "" id="planting_date" placeholder="0.00"></input>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="harvest_date" class="title-label">Dia de Cosecha:</label>
+                <input class="formInput" type="date" prevValue = "" id="harvest_date" placeholder=""> </input>
+            </div>
+          </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <label for="progress" class="title-label">Progreso:</label>
+                    <input class="formInput" type="number" prevValue = "" id="progress" placeholder="">  %</input>
+                </div>
+            </div>
             <br>
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <button class="button editarGastoButton"  id="guardarCambiosGasto"> Guardar Cambios </button>
+                    <button class="button yellow"  id="guardarCambiosSembradio"> Guardar Cambios </button>
                 </div>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button class="button red"  id="eliminarSembradio"> Eliminar Sembradío </button>
+            </div>
+          </div>
         </div>
        </div>
       </section>

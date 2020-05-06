@@ -94,7 +94,7 @@ function editarSeason(id) {
   planting_date = document.getElementById(id + 'planting_date').innerText,
   harvest_date = document.getElementById(id + 'harvest_date').innerText,
   progress = document.getElementById(id + 'progress').innerText,
-      url = './editarSeason.html?season=' + encodeURIComponent(season)  + '&seed=' + encodeURIComponent(seed) + '&planting_date=' + encodeURIComponent(planting_date) + '&harvest_date=' + encodeURIComponent(harvest_date) + '&progress=' + encodeURIComponent(progress);
+      url = './editarSembradio.html?season=' + encodeURIComponent(season)  + '&seed=' + encodeURIComponent(seed) + '&planting_date=' + encodeURIComponent(planting_date) + '&harvest_date=' + encodeURIComponent(harvest_date) + '&progress=' + encodeURIComponent(progress);
   document.location.href = url;
 }
 
@@ -126,7 +126,7 @@ function loadSiembras() {
             seasonText.innerText = "Temporada: ";
   
             var seasonText2 = document.createElement("h4");
-            seasonText2.setAttribute('id', index + "season");
+            seasonText2.setAttribute('id', index + "" + index2 + "season");
             seasonText2.setAttribute('style',"display: none");
             seasonText2.innerText = siembras[0].season;
             seasonText.innerText += seasonText2.innerText;
@@ -134,7 +134,7 @@ function loadSiembras() {
             var editCol = document.createElement("a");
             editCol.setAttribute('class', 'btn btn-info btn-lg');
             editCol.setAttribute('style',"display: block;");
-            editCol.setAttribute('id', index);
+            editCol.setAttribute('id', index + "" + index2);
             editCol.setAttribute("onclick","editarSeason(id)");
             var editSpan = document.createElement("span");
             editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
@@ -162,7 +162,7 @@ function loadSiembras() {
             var seedText2 = document.createElement("h4");
             seedText2.setAttribute('class', 'title-label');
             seedText2.setAttribute('style',"display: none");
-            seedText2.setAttribute('id', index + "seed");
+            seedText2.setAttribute('id', index + "" + index2 + "seed");
             seedText2.innerText =  siembra.seed;
 
             seedText.innerText += seedText2.innerText
@@ -175,7 +175,7 @@ function loadSiembras() {
             var plantingDateText2 = document.createElement("h4");
             plantingDateText2.setAttribute('class', 'title-label');
             plantingDateText2.setAttribute('style',"display: none");
-            plantingDateText2.setAttribute('id', index + "planting_date");
+            plantingDateText2.setAttribute('id', index + "" + index2 + "planting_date");
             plantingDateText2.innerText =  siembra.planting_date;
 
             plantingDateText.innerText += plantingDateText2.innerText
@@ -187,7 +187,7 @@ function loadSiembras() {
             var harvestDateText2 = document.createElement("h4");
             harvestDateText2.setAttribute('class', 'title-label');
             harvestDateText2.setAttribute('style',"display: none");
-            harvestDateText2.setAttribute('id', index + "harvest_date");
+            harvestDateText2.setAttribute('id', index + "" + index2 + "harvest_date");
             harvestDateText2.innerText =  siembra.harvest_date;
 
             harvestDateText.innerText += harvestDateText2.innerText
@@ -200,11 +200,7 @@ function loadSiembras() {
             col.appendChild(seedText2);
             col.appendChild(plantingDateText2);
             col.appendChild(harvestDateText2);
-            row.appendChild(col);
-            lista.appendChild(row);
-            // season=2020invierno&seed=maiz&planting_date=2020-05-09&harvest_date=2020-05-03&progress=50
-            // season=2020primavera&seed=frijol&planting_date=2020-05-02&harvest_date=2020-05-09&progress=50
-            
+            row.appendChild(col);  
 
             var col2 = document.createElement("div");
             col2.setAttribute('class', 'col-md-6');
@@ -219,7 +215,7 @@ function loadSiembras() {
 
             var progressText = document.createElement("h4");
             progressText.setAttribute('class', 'title-label');
-            progressText.setAttribute('id', index + "progress");
+            progressText.setAttribute('id', index + "" + index2 + "progress");
             progressText.setAttribute('style',"display: none");
             progressText.innerText =  siembra.progress;
             
