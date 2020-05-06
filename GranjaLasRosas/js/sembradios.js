@@ -160,7 +160,8 @@ function loadSiembras() {
             row.setAttribute('class', 'row');
   
             var col = document.createElement("div");
-            col.setAttribute('class', 'col-md-5');
+            col.setAttribute('class', 'col-md-3');
+            row.appendChild(col); 
   
             var seedText = document.createElement("label");
             seedText.setAttribute('class', 'title-label');
@@ -207,7 +208,7 @@ function loadSiembras() {
             col.appendChild(seedText2);
             col.appendChild(plantingDateText2);
             col.appendChild(harvestDateText2);
-            row.appendChild(col);  
+            // row.appendChild(col);  
 
             var col2 = document.createElement("div");
             col2.setAttribute('class', 'col-md-6');
