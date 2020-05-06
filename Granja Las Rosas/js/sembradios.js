@@ -116,16 +116,17 @@ function loadSiembras() {
           $.each(siembras, function(index2, siembra) {
             var firstRow = document.createElement("div");
             firstRow.setAttribute('class', 'row');
+            firstRow.setAttribute('style', 'background: #3DB1C1');
             
             var seasonCol = document.createElement("div");
             seasonCol.setAttribute('class', 'col-md-10');
   
-            var seasonText = document.createElement("h4");
+            var seasonText = document.createElement("label");
             seasonText.setAttribute('class', 'title-label');
             seasonText.setAttribute('style', 'color:white');
             seasonText.innerText = "Temporada: ";
   
-            var seasonText2 = document.createElement("h4");
+            var seasonText2 = document.createElement("label");
             seasonText2.setAttribute('id', index + "" + index2 + "season");
             seasonText2.setAttribute('style',"display: none");
             seasonText2.innerText = siembras[0].season;
@@ -137,14 +138,19 @@ function loadSiembras() {
             editCol.setAttribute('id', index + "" + index2);
             editCol.setAttribute("onclick","editarSeason(id)");
             var editSpan = document.createElement("span");
-            editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
+            editSpan.setAttribute('class', 'fa fa-pencil');
             
+            var divRow = document.createElement("div");
+            divRow.setAttribute('class', 'row');
+            divRow.setAttribute('style', 'background: white');
+
             seasonCol.appendChild(seasonText2);
             seasonCol.appendChild(seasonText);
             editCol.appendChild(editSpan);
   
             firstRow.appendChild(seasonCol);
             lista.appendChild(firstRow);
+            // lista.appendChild(divRow);
             firstRow.appendChild(editCol);
 
 
@@ -153,13 +159,13 @@ function loadSiembras() {
             row.setAttribute('class', 'row');
   
             var col = document.createElement("div");
-            col.setAttribute('class', 'col-md-6');
+            col.setAttribute('class', 'col-md-5');
   
-            var seedText = document.createElement("h4");
+            var seedText = document.createElement("label");
             seedText.setAttribute('class', 'title-label');
             seedText.innerText = "Siembra: ";
 
-            var seedText2 = document.createElement("h4");
+            var seedText2 = document.createElement("label");
             seedText2.setAttribute('class', 'title-label');
             seedText2.setAttribute('style',"display: none");
             seedText2.setAttribute('id', index + "" + index2 + "seed");
@@ -168,11 +174,11 @@ function loadSiembras() {
             seedText.innerText += seedText2.innerText
 
   
-            var plantingDateText = document.createElement("h4");
+            var plantingDateText = document.createElement("label");
             plantingDateText.setAttribute('class', 'title-label');
             plantingDateText.innerText = "Dia de Plantación: ";
 
-            var plantingDateText2 = document.createElement("h4");
+            var plantingDateText2 = document.createElement("label");
             plantingDateText2.setAttribute('class', 'title-label');
             plantingDateText2.setAttribute('style',"display: none");
             plantingDateText2.setAttribute('id', index + "" + index2 + "planting_date");
@@ -180,11 +186,11 @@ function loadSiembras() {
 
             plantingDateText.innerText += plantingDateText2.innerText
   
-            var harvestDateText = document.createElement("h4");
+            var harvestDateText = document.createElement("label");
             harvestDateText.setAttribute('class', 'title-label');
             harvestDateText.innerText = "Dia de Cosecha: ";
 
-            var harvestDateText2 = document.createElement("h4");
+            var harvestDateText2 = document.createElement("label");
             harvestDateText2.setAttribute('class', 'title-label');
             harvestDateText2.setAttribute('style',"display: none");
             harvestDateText2.setAttribute('id', index + "" + index2 + "harvest_date");
@@ -209,12 +215,12 @@ function loadSiembras() {
             var progressCol = document.createElement("div");
             var chartId = index + "" + index2  + "chart";
             progressCol.setAttribute('id', chartId);
-            progressCol.setAttribute('style', "width: 450px; height: 250px;");
+            progressCol.setAttribute('style', "width: 300px; height: 200px;");
             progressCol.setAttribute('completado', siembra.progress);
             progressCol.setAttribute('incompleto', 100 - siembra.progress);
 
             var progressText = document.createElement("h4");
-            progressText.setAttribute('class', 'title-label');
+            // progressText.setAttribute('class', 'title-label');
             progressText.setAttribute('id', index + "" + index2 + "progress");
             progressText.setAttribute('style',"display: none");
             progressText.innerText =  siembra.progress;
@@ -239,6 +245,13 @@ function loadSiembras() {
             
             lista.appendChild(divisionRow);
 
+            var loading = document.getElementById("loading");
+            var info = document.getElementById("info");
+            var loading = document.getElementById("loading");
+            if (loading.style.display === "block") {
+              loading.style.display = "none";
+              info.style.display = "block";
+            }
       },
 
       error: function (error_msg) {

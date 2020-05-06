@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title> Granja Las Rosas - Agregar Gasto </title>
+<title> Granja Las Rosas - Sembradíos </title>
 <link rel="stylesheet" href="./css/css.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
   <div class="bs-example">
@@ -42,65 +43,31 @@
 
 
 <section class="main">
-    <div class="formStyle" >
-        <div class="row">
-            <div class="col-md-4">
+    <div class="formStyle">
+    <div id="siembras">
+        <div id="loading" class="spinner-border m-5" role="status" style="display: block">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div id="info" style="display: none">
+            <div class="row">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+                   <h3 class="title-label">Sembradíos</h3>
+               </div>
+               <div class="col-md-4">
+               </div>
             </div>
-            <div class="col-md-4">
-                 <h3 class="title-label">Agregar Gasto</h3>
-             </div>
-             <div class="col-md-4">
-             </div>
-        </div>
-       <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label for="date" class="title-label">Fecha:</label>
-            <input class="form-control form-control-sm formInput" type="date"  id="date" placeholder="">
-        </div>
-        <div class="col-md-3">
-        </div>
      </div>
-     <br>
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label for="date" class="title-label">Descripción del Gasto:</label>
-            <input class="form-control form-control-sm formInput" type="text"  id="description" placeholder="descripcion">
-        </div>
-        <div class="col-md-3">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label for="date" class="title-label">Costo:</label>
-            <input class="form-control form-control-sm formInput" type="number"  id="cost" placeholder="">
-        </div>
-        <div class="col-md-3">
-        </div>
     </div>
         <br>
         <br>
-        <div class="row">
-            <div class="col-md-3">
-
-            </div>
-            <div class="col-md-6">
-                <button class="button yellow"  id="agregarGasto"> Agregar Gasto </button>
-            </div>
-            <div class="col-md-3">
-        </div>
-        </div>
-    </div>
-   </div>
+        <button onclick="window.location.href = './agregarNuevaSiembra.html';" class="button yellow"> Agregar Nueva Siembra</button>
+    </div>      
   </section>
 
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/agregarGasto.js"></script>
+    <script type="text/javascript" src="js/sembradios.js"></script>
 </body>
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">

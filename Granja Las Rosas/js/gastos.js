@@ -148,7 +148,7 @@ function loadGastos() {
             var costText = document.createElement("label");
             costText.setAttribute('class', 'user-label');
             costText.setAttribute('id', index+'cost');
-            costText.innerText = "$ " + gastos[0].cost + ".00";
+            costText.innerText = gastos[0].cost;
 
             var descriptionCol = document.createElement("div");
             descriptionCol.setAttribute('class', 'col-md-4');
