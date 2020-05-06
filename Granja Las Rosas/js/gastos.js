@@ -158,19 +158,20 @@ function loadGastos() {
             descriptionText.innerText = gastos[0].description;
 
             var editCol = document.createElement("a");
-            editCol.setAttribute('class', 'btn btn-info btn-lg');
+            editCol.setAttribute('class', "btn btn-outline-info");
             editCol.setAttribute('id', index);
             editCol.setAttribute("onclick","editarGasto(id)");
             var editSpan = document.createElement("span");
-            editSpan.setAttribute('class', 'glyphicon glyphicon-pencil');
+            editSpan.setAttribute('class', 'fa fa-pencil');
 
             var removeCol = document.createElement("button");
-            removeCol.setAttribute('class', 'btn btn-info btn-lg');
+            removeCol.setAttribute('class', 'btn btn-outline-danger');
             
             removeCol.setAttribute('id', index);
             removeCol.setAttribute("onclick","removerGasto(id)");
             var removeSpan = document.createElement("span");
-            removeSpan.setAttribute('class', 'glyphicon glyphicon-remove');
+            removeSpan.setAttribute('class', 'fa fa-remove');
+            // removeSpan.setAttribute('style', 'background:red');
 
 
             

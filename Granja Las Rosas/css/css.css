@@ -94,6 +94,11 @@ body {
     /* width: 60%; */
 }
 
+.red{
+    background: #F96026;
+    color:white;
+}
+
 .formInput{
     /* padding: 10px 10px; */
     border-radius: 0.5em;
