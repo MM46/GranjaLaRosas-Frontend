@@ -33,8 +33,9 @@ body {
 
 
 .logo{
-    width: 40%;
-    height: auto;
+    width: 100%;
+    /* height: auto; */
+
 }
 label{
     display: block;
