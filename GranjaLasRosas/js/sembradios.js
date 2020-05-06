@@ -119,7 +119,7 @@ function loadSiembras() {
             firstRow.setAttribute('style', 'background: #3DB1C1');
             
             var seasonCol = document.createElement("div");
-            seasonCol.setAttribute('class', 'col-md-10');
+            seasonCol.setAttribute('class', 'col-md-8');
   
             var seasonText = document.createElement("label");
             seasonText.setAttribute('class', 'title-label');
@@ -132,7 +132,9 @@ function loadSiembras() {
             seasonText2.innerText = siembras[0].season;
             seasonText.innerText += seasonText2.innerText;
           
-            var editCol = document.createElement("a");
+
+            var editCol = document.createElement("div");
+            editCol.setAttribute('class', 'col-md-4');
             editCol.setAttribute('class', 'btn btn-info btn-lg');
             editCol.setAttribute('style',"display: block;");
             editCol.setAttribute('id', index + "" + index2);
@@ -150,7 +152,6 @@ function loadSiembras() {
   
             firstRow.appendChild(seasonCol);
             lista.appendChild(firstRow);
-            // lista.appendChild(divRow);
             firstRow.appendChild(editCol);
 
 
