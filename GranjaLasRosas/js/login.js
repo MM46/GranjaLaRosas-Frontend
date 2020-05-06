@@ -32,7 +32,7 @@ $('#login_button').on('click', function () {
 function getLogin() {
   const token = localStorage.getItem('token');
   if (token) {
-    window.location = './signup.html';
+    window.location = './signUp.html';
   }
 }
   
