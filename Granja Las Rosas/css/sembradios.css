@@ -356,4 +356,11 @@ footer{
     margin-bottom: 100px;
 }
 
-
+div.google-visualization-tooltip {
+    white-space: nowrap;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #435279;
+    padding: 10px;
+    color: #3d4f61;
+  }
