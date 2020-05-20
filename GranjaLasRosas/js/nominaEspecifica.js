@@ -261,7 +261,7 @@ function loadNominas() {
         
                 var absencesText2 = document.createElement("p");
                 // absencesText2.setAttribute('class', 'user-label');
-                console.log("absc = " + empleados.abscences);
+                // console.log("absc = " + empleados.abscences);
                 if(empleados.absences == ""){
                     absencesText2.innerText = "-";
                 }
