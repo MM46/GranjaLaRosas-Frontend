@@ -80,7 +80,7 @@ function loadNominas() {
       dataType: 'json',
       success: function (data) {
         // console.log("nominas");
-        // console.log(data);
+        console.log(data);
         var lista = document.getElementById("nominaEspecifica");
 
         var periodStartRow = document.createElement("div");
@@ -190,12 +190,12 @@ function loadNominas() {
                 amountText.setAttribute('class', 'user-label');
                 amountText.innerText = "Cantidad";
 
-                var abscencesCol = document.createElement("div");
-                abscencesCol.setAttribute('class', 'col');
+                var absencesCol = document.createElement("div");
+                absencesCol.setAttribute('class', 'col');
         
-                var abscencesText = document.createElement("p");
-                abscencesText.setAttribute('class', 'user-label');
-                abscencesText.innerText = "Ausencias";
+                var absencesText = document.createElement("p");
+                absencesText.setAttribute('class', 'user-label');
+                absencesText.innerText = "Ausencias";
 
                 var deductionsCol = document.createElement("div");
                 deductionsCol.setAttribute('class', 'col');
@@ -218,8 +218,8 @@ function loadNominas() {
                 amountCol.appendChild(amountText);
                 thirdRow.appendChild(amountCol);
 
-                abscencesCol.appendChild(abscencesText);
-                thirdRow.appendChild(abscencesCol);
+                absencesCol.appendChild(absencesText);
+                thirdRow.appendChild(absencesCol);
 
                 deductionsCol.appendChild(deductionsText);
                 thirdRow.appendChild(deductionsCol);
@@ -248,12 +248,12 @@ function loadNominas() {
                 amountText2.setAttribute('class', 'user-label');
                 amountText2.innerText = empleados.amount;
 
-                var abscencesCol2 = document.createElement("div");
-                abscencesCol2.setAttribute('class', 'col');
+                var absencesCol2 = document.createElement("div");
+                absencesCol2.setAttribute('class', 'col');
         
-                var abscencesText2 = document.createElement("p");
-                abscencesText2.setAttribute('class', 'user-label');
-                abscencesText2.innerText = empleados.abscences;
+                var absencesText2 = document.createElement("p");
+                absencesText2.setAttribute('class', 'user-label');
+                absencesText2.innerText = empleados.absences.length;
 
                 var deductionsCol2 = document.createElement("div");
                 deductionsCol2.setAttribute('class', 'col');
@@ -275,8 +275,8 @@ function loadNominas() {
                 amountCol2.appendChild(amountText2);
                 employeeRow.appendChild(amountCol2);
 
-                abscencesCol2.appendChild(abscencesText2);
-                employeeRow.appendChild(abscencesCol2);
+                absencesCol2.appendChild(absencesText2);
+                employeeRow.appendChild(absencesCol2);
 
                 deductionsCol2.appendChild(deductionsText2);
                 employeeRow.appendChild(deductionsCol2);
