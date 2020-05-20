@@ -119,7 +119,7 @@ function loadSiembras() {
             firstRow.setAttribute('style', 'background: #3DB1C1');
             
             var seasonCol = document.createElement("div");
-            seasonCol.setAttribute('class', 'col-md-8');
+            seasonCol.setAttribute('class', 'col');
   
             var seasonText = document.createElement("label");
             seasonText.setAttribute('class', 'title-label');
@@ -134,7 +134,7 @@ function loadSiembras() {
           
 
             var editCol = document.createElement("div");
-            editCol.setAttribute('class', 'col-md-4');
+            editCol.setAttribute('class', 'col');
             editCol.setAttribute('class', 'btn btn-info btn-lg');
             editCol.setAttribute('style',"display: block;");
             editCol.setAttribute('id', index + "" + index2);
@@ -160,7 +160,7 @@ function loadSiembras() {
             row.setAttribute('class', 'row');
   
             var col = document.createElement("div");
-            col.setAttribute('class', 'col-md-3');
+            col.setAttribute('class', 'col');
             row.appendChild(col); 
   
             var seedText = document.createElement("label");
@@ -211,7 +211,7 @@ function loadSiembras() {
             // row.appendChild(col);  
 
             var col2 = document.createElement("div");
-            col2.setAttribute('class', 'col-md-6');
+            col2.setAttribute('class', 'col');
 
 
             var progressCol = document.createElement("div");
@@ -240,7 +240,7 @@ function loadSiembras() {
             divisionRow.setAttribute('class', 'row');
 
             var divisionCol = document.createElement("div");
-            divisionCol.setAttribute('class', 'col-md-12');
+            divisionCol.setAttribute('class', 'col');
             divisionCol.setAttribute('style', 'background:grey');
 
             divisionRow.appendChild(divisionCol);

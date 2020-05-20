@@ -102,7 +102,11 @@ body {
  .title-label, .normalLabel, .password-label, .name-label, .lastname_1-label, .lastname_2-label, .salary-label, .birth_date-label, .hire_date-label {
     padding:8px 0px;
     font-weight: bold;
+    /* font-size:5vw; */
     /* text-align: center !important; */
+}
+h4 {
+    font-size:2vw;
 }
 
 .divisor {
@@ -120,4 +124,26 @@ body {
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap   ;
+}
+
+.main {
+    width: 80%;
+    margin: 50px auto;
+}
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }
