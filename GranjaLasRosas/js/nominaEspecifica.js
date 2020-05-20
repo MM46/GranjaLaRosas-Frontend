@@ -163,11 +163,11 @@ function loadNominas() {
 
                 var divisionRow = document.createElement("div");
                 divisionRow.setAttribute('class', 'row');
-                // divisionRow.setAttribute('style', 'background:gray');
-                // var divisionCol = document.createElement("div");
-                // divisionCol.setAttribute('class', 'span');
-                // divisionCol.setAttribute('style', 'background:gray');
-                // divisionRow.appendChild(divisionCol);
+                divisionRow.setAttribute('style', 'background:gray');
+                var divisionCol = document.createElement("div");
+                divisionCol.setAttribute('class', 'col-12 col-md');
+                divisionCol.setAttribute('style', 'background:gray');
+                divisionRow.appendChild(divisionCol);
                 lista.appendChild(divisionRow);
         
                 // var usernameCol = document.createElement("div");
@@ -177,35 +177,35 @@ function loadNominas() {
                 thirdRow.setAttribute('class', 'row');
         
                 var usernameCol = document.createElement("div");
-                usernameCol.setAttribute('class', 'col');
+                usernameCol.setAttribute('class', "col-2 red h-100");
         
                 var usernameText = document.createElement("p");
                 usernameText.setAttribute('class', 'user-label');
                 usernameText.innerText = "Usuario";
 
                 var amountCol = document.createElement("div");
-                amountCol.setAttribute('class', 'col');
+                amountCol.setAttribute('class', "col-2 red h-100");
         
                 var amountText = document.createElement("p");
                 amountText.setAttribute('class', 'user-label');
                 amountText.innerText = "Cantidad";
 
                 var absencesCol = document.createElement("div");
-                absencesCol.setAttribute('class', 'col');
+                absencesCol.setAttribute('class', "col-2 red h-100");
         
                 var absencesText = document.createElement("p");
                 absencesText.setAttribute('class', 'user-label');
                 absencesText.innerText = "Ausencias";
 
                 var deductionsCol = document.createElement("div");
-                deductionsCol.setAttribute('class', 'col');
+                deductionsCol.setAttribute('class', "col-3 red h-100");
         
                 var deductionsText = document.createElement("p");
                 deductionsText.setAttribute('class', 'user-label');
                 deductionsText.innerText = "Deducciones";
 
                 var netpayCol = document.createElement("div");
-                netpayCol.setAttribute('class', 'col');
+                netpayCol.setAttribute('class', "col-3 red h-100");
         
                 var netpayText = document.createElement("p");
                 netpayText.setAttribute('class', 'user-label');
@@ -235,39 +235,42 @@ function loadNominas() {
                 employeeRow.setAttribute('class', 'row');
 
                 var usernameCol2 = document.createElement("div");
-                usernameCol2.setAttribute('class', 'col');
+                usernameCol2.setAttribute('class', 'col-2 h-100');
         
-                var usernameText2 = document.createElement("p");
+                var usernameText2 = document.createElement("h6");
                 usernameText2.setAttribute('class', 'user-label');
                 usernameText2.innerText = empleados.username;
                     
                 var amountCol2 = document.createElement("div");
-                amountCol2.setAttribute('class', 'col');
+                amountCol2.setAttribute('class', 'col-2 h-100');
         
-                var amountText2 = document.createElement("p");
+                var amountText2 = document.createElement("h6");
                 amountText2.setAttribute('class', 'user-label');
-                amountText2.innerText = empleados.amount;
+                amountText2.innerText = "$ " + empleados.amount;
 
                 var absencesCol2 = document.createElement("div");
-                absencesCol2.setAttribute('class', 'col');
+                absencesCol2.setAttribute('class', 'col-2 h-100');
         
-                var absencesText2 = document.createElement("p");
+                var absencesText2 = document.createElement("h6");
                 absencesText2.setAttribute('class', 'user-label');
-                absencesText2.innerText = empleados.absences.length;
+                console.log("absc = " + empleados.abscences);
+                if(empleados.absences == ""){
+                    absencesText2.innerText = "-";
+                }
 
                 var deductionsCol2 = document.createElement("div");
-                deductionsCol2.setAttribute('class', 'col');
+                deductionsCol2.setAttribute('class', 'col-3 h-100');
         
-                var deductionsText2 = document.createElement("p");
+                var deductionsText2 = document.createElement("h6");
                 deductionsText2.setAttribute('class', 'user-label');
-                deductionsText2.innerText = empleados.deductions;
+                deductionsText2.innerText = "$ " + empleados.deductions;
 
                 var netpayCol2 = document.createElement("div");
-                netpayCol2.setAttribute('class', 'col');
+                netpayCol2.setAttribute('class', 'col-3 h-100');
         
-                var netpayText2 = document.createElement("p");
+                var netpayText2 = document.createElement("h6");
                 netpayText2.setAttribute('class', 'user-label');
-                netpayText2.innerText = empleados.amount - empleados.net_pay;
+                netpayText2.innerText = "$ " + empleados.net_pay;
                     
                 usernameCol2.appendChild(usernameText2);
                 employeeRow.appendChild(usernameCol2);
