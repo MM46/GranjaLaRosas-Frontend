@@ -43,8 +43,17 @@
 
 <section class="main">
     <div class="formStyle">
+        <div class="form-group has-search">
+            <span class="fa fa-calendar form-control-feedback"></span>
+            <input type="date" class="form-control" onkeyup="" id="from" placeholder="Desde">
+          </div>
+          <div class="form-group has-search">
+            <span class="fa fa-calendar form-control-feedback"></span>
+            <input type="date" class="form-control" onkeyup="" id="to" placeholder="Hacia">
+          </div>
+          <button onclick="loadGastos()" class ="form-control-feedback">Buscar <i class="fa fa-search"></i></button>
     <div id="gastos">
-        <div id="loading" class="spinner-border m-5" role="status" style="display: block">
+        <div id="loading" class="spinner-border m-5" role="status" style="display: none">
             <span class="sr-only">Loading...</span>
           </div>
           <div id="info" style="display: none">

@@ -63,7 +63,7 @@ function checkingAdmin() {
 }
 
 getLogin()
-checkingAdmin()
+// checkingAdmin()
 
 
 function editarGasto(id) {
@@ -83,12 +83,6 @@ function removerGasto(id) {
       let date = document.getElementById(id + 'date').innerText;
       let cost = document.getElementById(id + 'cost').innerText;
       let description = document.getElementById(id + "description").innerText;
-
-      console.log("removerGasto()" );
-      console.log("index: " +  id);
-      console.log("date1: " + date);
-      console.log("cost1: " +  cost);
-      console.log("description1: " +  description);
 
       json_to_send = {
         "date": date,
@@ -121,85 +115,110 @@ function removerGasto(id) {
 
 
 function loadGastos() {
+
+  let fromDate = $('#from').val();
+  let toDate = $('#to').val();
+
+  let fromYear = fromDate.substring(0, 4);  
+  let fromMonth = fromDate.substring(5, 7); 
+  let fromDay = fromDate.substring(8, 10);
+
+  let toYear = toDate.substring(0, 4);  
+  let toMonth = toDate.substring(5, 7); 
+  let toDay = toDate.substring(8, 10);
+
+  let from = fromYear + fromMonth + fromDay;
+  let to = toYear + toMonth + toDay;
+
+  // console.log("from: " + parseInt(from) + " to: " + to);
+
+  json_to_send = {
+    "from": parseInt(from),
+    "to": parseInt(to)
+  };
+
+  json_to_send = JSON.stringify(json_to_send);
+  console.log(json_to_send);
     $.ajax({
-      url: 'https://granjalasrosasback.web.app/getExpenses',
+      url: 'https://granjalasrosasback.web.app/getConceptsReport',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
       },
-      method: 'GET',
+      method: 'POST',
       dataType: 'json',
+      data: json_to_send,
       success: function (data) {
         // console.log("Gastos");
-        // console.log(data);
-        var lista = document.getElementById("gastos");
-        $.each(data, function(index, gastos) {
-            var row = document.createElement("div");
-            row.setAttribute('class', 'row');
-            var dateCol = document.createElement("div");
-            dateCol.setAttribute('class', 'col-md-3');
-            var dateText = document.createElement("p");
-            dateText.setAttribute('class', 'user-label');
-            dateText.setAttribute('id', index+'date');
-            dateText.innerText = gastos[0].date;
+        console.log(data);
+        // var lista = document.getElementById("gastos");
+        // $.each(data, function(index, gastos) {
+        //     var row = document.createElement("div");
+        //     row.setAttribute('class', 'row');
+        //     var dateCol = document.createElement("div");
+        //     dateCol.setAttribute('class', 'col-md-3');
+        //     var dateText = document.createElement("p");
+        //     dateText.setAttribute('class', 'user-label');
+        //     dateText.setAttribute('id', index+'date');
+        //     dateText.innerText = gastos[0].date;
 
-            var costCol = document.createElement("div");
-            costCol.setAttribute('class', 'col-md-3');
-            var costText = document.createElement("label");
-            costText.setAttribute('class', 'user-label');
-            costText.setAttribute('id', index+'cost');
-            costText.innerText = gastos[0].cost;
+        //     var costCol = document.createElement("div");
+        //     costCol.setAttribute('class', 'col-md-3');
+        //     var costText = document.createElement("label");
+        //     costText.setAttribute('class', 'user-label');
+        //     costText.setAttribute('id', index+'cost');
+        //     costText.innerText = gastos[0].cost;
 
-            var descriptionCol = document.createElement("div");
-            descriptionCol.setAttribute('class', 'col-md-4');
-            var descriptionText = document.createElement("label");
-            descriptionText.setAttribute('class', 'user-label');
-            descriptionText.setAttribute('id', index+'description');
-            descriptionText.innerText = gastos[0].description;
+        //     var descriptionCol = document.createElement("div");
+        //     descriptionCol.setAttribute('class', 'col-md-4');
+        //     var descriptionText = document.createElement("label");
+        //     descriptionText.setAttribute('class', 'user-label');
+        //     descriptionText.setAttribute('id', index+'description');
+        //     descriptionText.innerText = gastos[0].description;
 
-            var editCol = document.createElement("a");
-            editCol.setAttribute('class', "btn btn-outline-info");
-            editCol.setAttribute('id', index);
-            editCol.setAttribute("onclick","editarGasto(id)");
-            var editSpan = document.createElement("span");
-            editSpan.setAttribute('class', 'fa fa-pencil');
+        //     var editCol = document.createElement("a");
+        //     editCol.setAttribute('class', "btn btn-outline-info");
+        //     editCol.setAttribute('id', index);
+        //     editCol.setAttribute("onclick","editarGasto(id)");
+        //     var editSpan = document.createElement("span");
+        //     editSpan.setAttribute('class', 'fa fa-pencil');
 
-            var removeCol = document.createElement("button");
-            removeCol.setAttribute('class', 'btn btn-outline-danger');
+        //     var removeCol = document.createElement("button");
+        //     removeCol.setAttribute('class', 'btn btn-outline-danger');
             
-            removeCol.setAttribute('id', index);
-            removeCol.setAttribute("onclick","removerGasto(id)");
-            var removeSpan = document.createElement("span");
-            removeSpan.setAttribute('class', 'fa fa-remove');
-            // removeSpan.setAttribute('style', 'background:red');
+        //     removeCol.setAttribute('id', index);
+        //     removeCol.setAttribute("onclick","removerGasto(id)");
+        //     var removeSpan = document.createElement("span");
+        //     removeSpan.setAttribute('class', 'fa fa-remove');
+        //     // removeSpan.setAttribute('style', 'background:red');
 
 
             
 
-            dateCol.appendChild(dateText);
-            row.appendChild(dateCol);
+        //     dateCol.appendChild(dateText);
+        //     row.appendChild(dateCol);
 
-            costCol.appendChild(costText);
-            row.appendChild(costCol);
+        //     costCol.appendChild(costText);
+        //     row.appendChild(costCol);
 
-            descriptionCol.appendChild(descriptionText);
-            row.appendChild(descriptionCol);
+        //     descriptionCol.appendChild(descriptionText);
+        //     row.appendChild(descriptionCol);
 
-            editCol.appendChild(editSpan);
-            row.appendChild(editCol);
+        //     editCol.appendChild(editSpan);
+        //     row.appendChild(editCol);
 
-            removeCol.appendChild(removeSpan);
-            row.appendChild(removeCol);
+        //     removeCol.appendChild(removeSpan);
+        //     row.appendChild(removeCol);
 
-            lista.appendChild(row);
-        })
+        //     lista.appendChild(row);
+        // })
         var loading = document.getElementById("loading");
         var info = document.getElementById("info");
         var loading = document.getElementById("loading");
-        if (loading.style.display === "block") {
-          loading.style.display = "none";
-          info.style.display = "block";
-        }
+        // if (loading.style.display == "block") {
+          loading.style.display = "block";
+        //   info.style.display = "block";
+        // }
       },
 
       error: function (error_msg) {
@@ -209,6 +228,6 @@ function loadGastos() {
   }
 
 
-  loadGastos()
+  // loadGastos()
 
 

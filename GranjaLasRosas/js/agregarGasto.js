@@ -1,11 +1,4 @@
-// function myFunction() {
-//     var x = document.getElementById("myTopnav");
-//     if (x.className === "topnav") {
-//       x.className += " responsive";
-//     } else {
-//       x.className = "topnav";
-//     }
-//   }
+
 
 var token = localStorage.getItem('token');
 if (token) {
@@ -68,20 +61,27 @@ checkingAdmin()
 
 $('#agregarGasto').on('click', function () {
 
-  let date = $('#date').val();
+  let inputDate = $('#date').val();
   let description = $('#description').val();
   let cost = $('#cost').val();
 
+  let year = inputDate.substring(0, 4);  
+  let month = inputDate.substring(5, 7); 
+  let day = inputDate.substring(8, 10);
+
+  let date = year + month + day;
+
   json_to_send = {
-    "date": date,
+    "date": parseInt(date),
     "description": description,
-    "cost" : cost
+    "cost" : cost,
+    "earning" : false,
   };
 
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://granjalasrosasback.web.app/addExpense',
+    url: 'https://granjalasrosasback.web.app/addConcept',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token
