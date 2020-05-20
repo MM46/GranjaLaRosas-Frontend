@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title> Granja Las Rosas - Gastos </title>
+<title> Granja Las Rosas - Reporte Ganancias </title>
 <link rel="stylesheet" href="./css/css.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -51,7 +51,7 @@
             <span class="fa fa-calendar form-control-feedback"></span>
             <input type="date" class="form-control" onkeyup="" id="to" placeholder="Hacia">
           </div>
-          <button onclick="loadGastos()" class ="form-control-feedback">Buscar <i class="fa fa-search"></i></button>
+          <button onclick="loadGanancias()" class ="form-control-feedback">Buscar <i class="fa fa-search"></i></button>
     <div id="gastos">
         <div id="loading" class="spinner-border m-5" role="status" style="display: none">
             <span class="sr-only">Loading...</span>
@@ -84,15 +84,12 @@
             <div class="col">
                 <button onclick="window.location.href = './agregarGasto.html';" class="button yellow"> Agregar Gasto </button>
             </div>
-            <div class="col">
-                <button onclick="window.location.href = './ganancias.html';" class="button red"> Reportes de Ganancias </button>
-            </div>
           </div>
         </div>
       </section>
 
     <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/gastos.js"></script>
+    <script type="text/javascript" src="js/ganancias.js"></script>
 </body>
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">

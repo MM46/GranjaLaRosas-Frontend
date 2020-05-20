@@ -114,7 +114,7 @@ function removerGasto(id) {
 }
 
 
-function loadGastos() {
+function loadGanancias() {
 
   let fromDate = $('#from').val();
   let toDate = $('#to').val();
@@ -140,7 +140,7 @@ function loadGastos() {
   json_to_send = JSON.stringify(json_to_send);
   console.log(json_to_send);
     $.ajax({
-      url: 'https://granjalasrosasback.web.app/getExpensesReport',
+      url: 'https://granjalasrosasback.web.app/getEarningsReport',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
